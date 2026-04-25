@@ -267,10 +267,6 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
 
-  - name: ✨ Google Gemini
-    type: select
-    proxies:
-      - 🚀 节点选择
 
   - name: 🍎 苹果服务
     type: select
@@ -282,15 +278,7 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
 
-  - name: 🤖 OpenAI
-    type: select
-    proxies:
-      - 🚀 节点选择
 
-  - name: 🎭 Claude
-    type: select
-    proxies:
-      - 🚀 节点选择
 
   - name: 🔎 微软 Bing
     type: select
@@ -347,7 +335,7 @@ rules:
   - RULE-SET,google,🔍 Google
   - RULE-SET,googleplay,▶️ Google Play
   - RULE-SET,googlefcm,🔔 Google FCM
-  - RULE-SET,googlegemini,✨ Google Gemini
+  - RULE-SET,googlegemini,💬 Ai平台
 
   # === Apple ===
   - RULE-SET,apple,🍎 苹果服务
@@ -360,9 +348,9 @@ rules:
   - RULE-SET,bilibili,📺 哔哩哔哩
 
   # === AI & Dev ===
-  - RULE-SET,openai,🤖 OpenAI
+  - RULE-SET,openai,💬 Ai平台
   - RULE-SET,github,🧑‍💻 GitHub
-  - RULE-SET,claude,🎭 Claude
+  - RULE-SET,claude,💬 Ai平台
 
   # === Microsoft ===
   - RULE-SET,bing,🔎 微软 Bing
