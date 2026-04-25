@@ -226,57 +226,68 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 📹 油管视频
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🎥 奈飞视频
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🏷️ TikTok
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 📸 Instagram
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 💬 Ai平台
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🔍 Google
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: ▶️ Google Play
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🔔 Google FCM
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
 
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🧑‍💻 GitHub
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
 
 
@@ -284,21 +295,25 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: ☁️ 微软云盘
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🖥️ 微软服务
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 🎮 游戏平台
     type: select
     proxies:
       - 🚀 节点选择
+      - 🎯 全球直连
 
   - name: 📺 哔哩哔哩
     type: select
@@ -310,11 +325,6 @@ proxy-groups:
     proxies:
       - 🎯 全球直连
 
-  - name: 🇨🇳 国内直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🎯 全球直连
 
 
 # --- 3. 规则 (Rules) ---
@@ -362,9 +372,9 @@ rules:
 
   # === 中国直连 ===
   - RULE-SET,neteasemusic,🎵 网易音乐
-  - RULE-SET,chinadomain,🇨🇳 国内直连
-  - DOMAIN-SUFFIX,cn,🇨🇳 国内直连
-  - GEOIP,CN,🇨🇳 国内直连
+  - RULE-SET,chinadomain,🎯 全球直连
+  - DOMAIN-SUFFIX,cn,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
 
   # === Telegram ===
   - RULE-SET,telegram,📲 电报消息
