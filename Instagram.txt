@@ -1,5 +1,0 @@
-# Instagram - 4 rules
-DOMAIN-KEYWORD,instagram,Proxy
-DOMAIN-SUFFIX,cdninstagram.com,Proxy
-DOMAIN-SUFFIX,instagr.am,Proxy
-DOMAIN-SUFFIX,instagram.com,Proxy
