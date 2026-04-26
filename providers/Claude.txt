@@ -1,0 +1,3 @@
+# Claude - 2 rules
+DOMAIN-SUFFIX,anthropic.com,Proxy
+DOMAIN-SUFFIX,claude.ai,Proxy
