@@ -1,0 +1,18 @@
+{
+  "name": "Apple.txt",
+  "path": "clashmeta/providers/Apple.txt",
+  "sha": "286658d8e9110666a4530dfbe23d8d622cd54b78",
+  "size": 1055,
+  "url": "https://api.github.com/repos/ipevel/karing-ruleset/contents/clashmeta/providers/Apple.txt?ref=main",
+  "html_url": "https://github.com/ipevel/karing-ruleset/blob/main/clashmeta/providers/Apple.txt",
+  "git_url": "https://api.github.com/repos/ipevel/karing-ruleset/git/blobs/286658d8e9110666a4530dfbe23d8d622cd54b78",
+  "download_url": "https://raw.githubusercontent.com/ipevel/karing-ruleset/main/clashmeta/providers/Apple.txt",
+  "type": "file",
+  "content": "IyBBcHBsZSAtIDI5IHJ1bGVzCkRPTUFJTi1TVUZGSVgsYWFwbGltZy5jb20s\nUHJveHkKRE9NQUlOLVNVRkZJWCxha2FkbnMubmV0LFByb3h5CkRPTUFJTi1T\nVUZGSVgsYXBwbGUtY2xvdWRraXQuY29tLFByb3h5CkRPTUFJTi1TVUZGSVgs\nYXBwbGUtZG5zLm5ldCxQcm94eQpET01BSU4tU1VGRklYLGFwcGxlLW1hcGtp\ndC5jb20sUHJveHkKRE9NQUlOLVNVRkZJWCxhcHBsZS5jbyxQcm94eQpET01B\nSU4tU1VGRklYLGFwcGxlLmNvbSxQcm94eQpET01BSU4tU1VGRklYLGFwcGxl\nLmNvbS5jbixQcm94eQpET01BSU4tU1VGRklYLGFwcGxlLm5ld3MsUHJveHkK\nRE9NQUlOLVNVRkZJWCxhcHBzdG9yZS5jb20sUHJveHkKRE9NQUlOLVNVRkZJ\nWCxjZG4tYXBwbGUuY29tLFByb3h5CkRPTUFJTi1TVUZGSVgsY3Jhc2hseXRp\nY3MuY29tLFByb3h5CkRPTUFJTi1TVUZGSVgsaWNsb3VkLWNvbnRlbnQuY29t\nLFByb3h5CkRPTUFJTi1TVUZGSVgsaWNsb3VkLmNvbSxQcm94eQpET01BSU4t\nU1VGRklYLGljbG91ZC5jb20uY24sUHJveHkKRE9NQUlOLVNVRkZJWCxpdHVu\nZXMuY29tLFByb3h5CkRPTUFJTi1TVUZGSVgsbWUuY29tLFByb3h5CkRPTUFJ\nTi1TVUZGSVgsbXpzdGF0aWMuY29tLFByb3h5CkRPTUFJTixhcHBsZS5jb21z\nY29yZXJlc2VhcmNoLmNvbSxQcm94eQpJUC1DSURSLDE3LjAuMC4wLzgsUHJv\neHksbm8tcmVzb2x2ZQpJUC1DSURSLDYzLjkyLjIyNC4wLzE5LFByb3h5LG5v\nLXJlc29sdmUKSVAtQ0lEUiw2NS4xOTkuMjIuMC8yMyxQcm94eSxuby1yZXNv\nbHZlCklQLUNJRFIsMTM5LjE3OC4xMjguMC8xOCxQcm94eSxuby1yZXNvbHZl\nCklQLUNJRFIsMTQ0LjE3OC4wLjAvMTksUHJveHksbm8tcmVzb2x2ZQpJUC1D\nSURSLDE0NC4xNzguMzYuMC8yMixQcm94eSxuby1yZXNvbHZlCklQLUNJRFIs\nMTQ0LjE3OC40OC4wLzIwLFByb3h5LG5vLXJlc29sdmUKSVAtQ0lEUiwxOTIu\nMzUuNTAuMC8yNCxQcm94eSxuby1yZXNvbHZlCklQLUNJRFIsMTk4LjE4My4x\nNy4wLzI0LFByb3h5LG5vLXJlc29sdmUKSVAtQ0lEUiwyMDUuMTgwLjE3NS4w\nLzI0LFByb3h5LG5vLXJlc29sdmU=\n",
+  "encoding": "base64",
+  "_links": {
+    "self": "https://api.github.com/repos/ipevel/karing-ruleset/contents/clashmeta/providers/Apple.txt?ref=main",
+    "git": "https://api.github.com/repos/ipevel/karing-ruleset/git/blobs/286658d8e9110666a4530dfbe23d8d622cd54b78",
+    "html": "https://github.com/ipevel/karing-ruleset/blob/main/clashmeta/providers/Apple.txt"
+  }
+}
