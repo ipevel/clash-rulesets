@@ -1,0 +1,7 @@
+# GitHub - 6 rules
+DOMAIN-KEYWORD,github,Proxy
+DOMAIN-SUFFIX,github.com,Proxy
+DOMAIN-SUFFIX,github.io,Proxy
+DOMAIN-SUFFIX,githubapp.com,Proxy
+DOMAIN-SUFFIX,githubassets.com,Proxy
+DOMAIN-SUFFIX,githubusercontent.com,Proxy
