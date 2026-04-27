@@ -9,8 +9,8 @@ rule-providers:
   Apple:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/ipevel/karing-ruleset/main/providers/Apple.yaml"
-    path: ./providers/Apple.yaml
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Apple.txt"
+    path: ./providers/Apple.txt
     interval: 86400
 ```
 
@@ -18,26 +18,26 @@ rule-providers:
 
 | File | Description | Rules |
 |------|-------------|-------|
-| Apple.yaml | Apple services | 29 |
-| BanAD.yaml | Block ads | 6458 |
-| BanADCompany.yaml | Block ad companies | 131 |
-| Bing.yaml | Microsoft Bing | 3 |
-| ChinaDomain.yaml | China domains DIRECT | 635 |
-| ChinaMedia.yaml | Bilibili, video | 37 |
-| Claude.yaml | Claude AI | 2 |
-| Game.yaml | Gaming platforms | 7 |
-| Gemini.yaml | Google Gemini | 38 |
-| GitHub.yaml | GitHub | 6 |
-| Google.yaml | Google services | 1113 |
-| GoogleFCM.yaml | Google FCM | 12 |
-| GooglePlay.yaml | Google Play | 37 |
-| Instagram.yaml | Instagram | 4 |
-| Microsoft.yaml | Microsoft services | 79 |
-| NetEaseMusic.yaml | NetEase Music | 37 |
-| Netflix.yaml | Netflix | 33 |
-| OneDrive.yaml | Microsoft OneDrive | 15 |
-| OpenAI.yaml | OpenAI / ChatGPT | 17 |
-| ProxyGFWlist.yaml | GFW proxy list | 6985 |
-| ProxyMedia.yaml | YouTube/TikTok/IG | 368 |
-| Telegram.yaml | Telegram | 13 |
-| TikTok.yaml | TikTok | 10 |
+| Apple.txt | Apple services | 29 |
+| BanAD.txt | Block ads | 6458 |
+| BanADCompany.txt | Block ad companies | 131 |
+| Bing.txt | Microsoft Bing | 3 |
+| ChinaDomain.txt | China domains DIRECT | 635 |
+| ChinaMedia.txt | Bilibili, video | 37 |
+| Claude.txt | Claude AI | 2 |
+| GitHub.txt | GitHub | 6 |
+| Google.txt | Google services | 1113 |
+| GoogleFCM.txt | Google FCM | 12 |
+| GoogleGemini.txt | Google Gemini | 38 |
+| GooglePlay.txt | Google Play | 37 |
+| Instagram.txt | Instagram | 4 |
+| Microsoft.txt | Microsoft services | 79 |
+| NetEaseMusic.txt | NetEase Music | 37 |
+| Netflix.txt | Netflix | 33 |
+| OneDrive.txt | Microsoft OneDrive | 15 |
+| OpenAI.txt | OpenAI / ChatGPT | 17 |
+| ProxyGFWlist.txt | GFW proxy list | 6985 |
+| ProxyMedia.txt | YouTube/TikTok/IG | 368 |
+| Telegram.txt | Telegram | 13 |
+| TikTok.txt | TikTok | 10 |
+| Xbox.txt | Gaming platforms | 7 |
