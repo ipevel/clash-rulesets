@@ -223,95 +223,80 @@ proxy-groups:
       - 🎯 全球直连
       - 🔯 故障转移
 
-  # --- 应用分组（独立，不链式引用节点选择）---
+  # --- 应用分组（每个组完全独立，只含节点不含组引用链）---
   - name: 💬 Ai平台
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 📹 油管视频
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🏷️ TikTok
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 📸 Instagram
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🎥 奈飞视频
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🔍 Google
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: ▶️ Google Play
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🔔 Google FCM
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🍎 苹果服务
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🧑‍💻 GitHub
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🔎 微软 Bing
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: ☁️ 微软云盘
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🖥️ 微软服务
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 🎮 游戏平台
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 📲 电报消息
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 全球直连
 
   - name: 📺 哔哩哔哩
