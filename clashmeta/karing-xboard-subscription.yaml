@@ -17,14 +17,14 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/BanAD.txt"
-    path: ./ruleset/reject.yaml
+    path: ./ruleset/reject.txt
     interval: 86400
 
   adcompany:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/BanADCompany.txt"
-    path: ./ruleset/adcompany.yaml
+    path: ./ruleset/adcompany.txt
     interval: 86400
 
   # === Google ===
@@ -32,28 +32,28 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Google.txt"
-    path: ./ruleset/google.yaml
+    path: ./ruleset/google.txt
     interval: 86400
 
   googleplay:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GooglePlay.txt"
-    path: ./ruleset/googleplay.yaml
+    path: ./ruleset/googleplay.txt
     interval: 86400
 
   googlefcm:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GoogleFCM.txt"
-    path: ./ruleset/googlefcm.yaml
+    path: ./ruleset/googlefcm.txt
     interval: 86400
 
   googlegemini:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GoogleGemini.txt"
-    path: ./ruleset/googlegemini.yaml
+    path: ./ruleset/googlegemini.txt
     interval: 86400
 
   # === Apple ===
@@ -61,7 +61,7 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Apple.txt"
-    path: ./ruleset/apple.yaml
+    path: ./ruleset/apple.txt
     interval: 86400
 
   # === 流媒体 & 社交 ===
@@ -69,35 +69,35 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ProxyMedia.txt"
-    path: ./ruleset/proxy-media.yaml
+    path: ./ruleset/proxy-media.txt
     interval: 86400
 
   tiktok:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/TikTok.txt"
-    path: ./ruleset/tiktok.yaml
+    path: ./ruleset/tiktok.txt
     interval: 86400
 
   instagram:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Instagram.txt"
-    path: ./ruleset/instagram.yaml
+    path: ./ruleset/instagram.txt
     interval: 86400
 
   netflix:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Netflix.txt"
-    path: ./ruleset/netflix.yaml
+    path: ./ruleset/netflix.txt
     interval: 86400
 
   bilibili:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ChinaMedia.txt"
-    path: ./ruleset/bilibili.yaml
+    path: ./ruleset/bilibili.txt
     interval: 86400
 
   # === AI & Dev ===
@@ -105,21 +105,21 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/OpenAI.txt"
-    path: ./ruleset/openai.yaml
+    path: ./ruleset/openai.txt
     interval: 86400
 
   github:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GitHub.txt"
-    path: ./ruleset/github.yaml
+    path: ./ruleset/github.txt
     interval: 86400
 
   claude:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Claude.txt"
-    path: ./ruleset/claude.yaml
+    path: ./ruleset/claude.txt
     interval: 86400
 
   # === Microsoft ===
@@ -127,21 +127,21 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Bing.txt"
-    path: ./ruleset/bing.yaml
+    path: ./ruleset/bing.txt
     interval: 86400
 
   onedrive:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/OneDrive.txt"
-    path: ./ruleset/onedrive.yaml
+    path: ./ruleset/onedrive.txt
     interval: 86400
 
   microsoft:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Microsoft.txt"
-    path: ./ruleset/microsoft.yaml
+    path: ./ruleset/microsoft.txt
     interval: 86400
 
   # === Gaming ===
@@ -149,7 +149,7 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Xbox.txt"
-    path: ./ruleset/gaming.yaml
+    path: ./ruleset/gaming.txt
     interval: 86400
 
   # === 中国直连 ===
@@ -157,14 +157,14 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/NetEaseMusic.txt"
-    path: ./ruleset/neteasemusic.yaml
+    path: ./ruleset/neteasemusic.txt
     interval: 86400
 
   chinadomain:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ChinaDomain.txt"
-    path: ./ruleset/chinadomain.yaml
+    path: ./ruleset/chinadomain.txt
     interval: 86400
 
   # === Telegram ===
@@ -172,14 +172,14 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Telegram.txt"
-    path: ./ruleset/telegram.yaml
+    path: ./ruleset/telegram.txt
     interval: 86400
 
   telegramcidr:
     type: http
     behavior: ipcidr
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Telegram.txt"
-    path: ./ruleset/telegramcidr.yaml
+    path: ./ruleset/telegramcidr.txt
     interval: 86400
 
   # === 代理规则 ===
@@ -187,7 +187,7 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ProxyGFWlist.txt"
-    path: ./ruleset/gfwlist.yaml
+    path: ./ruleset/gfwlist.txt
     interval: 86400
 
 # --- 2. 策略组配置 ---
