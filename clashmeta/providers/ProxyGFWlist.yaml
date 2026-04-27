@@ -1,4 +1,4 @@
-# ProxyGFWlist - 6985 rules
+# ProxyGFWlist - 6977 rules
 payload:
   - DOMAIN-KEYWORD,1e100,Proxy
   - DOMAIN-KEYWORD,abema,Proxy
@@ -31,7 +31,6 @@ payload:
   - DOMAIN-SUFFIX,bit.no.com,Proxy
   - DOMAIN-SUFFIX,btlibrary.me,Proxy
   - DOMAIN-SUFFIX,cccat.io,Proxy
-  - DOMAIN-SUFFIX,chat.openai.com,Proxy
   - DOMAIN-SUFFIX,cloudcone.com,Proxy
   - DOMAIN-SUFFIX,dubox.com,Proxy
   - DOMAIN-SUFFIX,gameloft.com,Proxy
@@ -41,7 +40,6 @@ payload:
   - DOMAIN-SUFFIX,linkedin.com,Proxy
   - DOMAIN-SUFFIX,myteamspeak.com,Proxy
   - DOMAIN-SUFFIX,notion.so,Proxy
-  - DOMAIN-SUFFIX,openai.com,Proxy
   - DOMAIN-SUFFIX,ping.pe,Proxy
   - DOMAIN-SUFFIX,reddit.com,Proxy
   - DOMAIN-SUFFIX,teddysun.com,Proxy
@@ -391,7 +389,6 @@ payload:
   - DOMAIN-SUFFIX,answering-islam.org,Proxy
   - DOMAIN-SUFFIX,antd.org,Proxy
   - DOMAIN-SUFFIX,anthonycalzadilla.com,Proxy
-  - DOMAIN-SUFFIX,anthropic.com,Proxy
   - DOMAIN-SUFFIX,anti1984.com,Proxy
   - DOMAIN-SUFFIX,antichristendom.com,Proxy
   - DOMAIN-SUFFIX,antiwave.net,Proxy
@@ -1006,7 +1003,6 @@ payload:
   - DOMAIN-SUFFIX,chapm25.com,Proxy
   - DOMAIN-SUFFIX,character.ai,Proxy
   - DOMAIN-SUFFIX,chat.com,Proxy
-  - DOMAIN-SUFFIX,chatgpt.com,Proxy
   - DOMAIN-SUFFIX,chatnook.com,Proxy
   - DOMAIN-SUFFIX,chatpdf.com,Proxy
   - DOMAIN-SUFFIX,chaturbate.com,Proxy
@@ -1142,7 +1138,6 @@ payload:
   - DOMAIN-SUFFIX,ck101.com,Proxy
   - DOMAIN-SUFFIX,clarionproject.org,Proxy
   - DOMAIN-SUFFIX,classicalguitarblog.net,Proxy
-  - DOMAIN-SUFFIX,claude.ai,Proxy
   - DOMAIN-SUFFIX,clb.org.hk,Proxy
   - DOMAIN-SUFFIX,cleansite.biz,Proxy
   - DOMAIN-SUFFIX,cleansite.info,Proxy
@@ -2232,7 +2227,6 @@ payload:
   - DOMAIN-SUFFIX,github.com,Proxy
   - DOMAIN-SUFFIX,github.io,Proxy
   - DOMAIN-SUFFIX,githubassets.com,Proxy
-  - DOMAIN-SUFFIX,githubcopilot.com,Proxy
   - DOMAIN-SUFFIX,githubmemory.com,Proxy
   - DOMAIN-SUFFIX,githubusercontent.com,Proxy
   - DOMAIN-SUFFIX,gitlab.com,Proxy
@@ -4252,7 +4246,6 @@ payload:
   - DOMAIN-SUFFIX,oojj.de,Proxy
   - DOMAIN-SUFFIX,oopsforum.com,Proxy
   - DOMAIN-SUFFIX,open.com.hk,Proxy
-  - DOMAIN-SUFFIX,openai.com,Proxy
   - DOMAIN-SUFFIX,openallweb.com,Proxy
   - DOMAIN-SUFFIX,openbase.com,Proxy
   - DOMAIN-SUFFIX,opendemocracy.net,Proxy
@@ -4397,7 +4390,6 @@ payload:
   - DOMAIN-SUFFIX,perfectgirls.net,Proxy
   - DOMAIN-SUFFIX,perfectvpn.net,Proxy
   - DOMAIN-SUFFIX,periscope.tv,Proxy
-  - DOMAIN-SUFFIX,perplexity.ai,Proxy
   - DOMAIN-SUFFIX,persecutionblog.com,Proxy
   - DOMAIN-SUFFIX,persiankitty.com,Proxy
   - DOMAIN-SUFFIX,pewresearch.org,Proxy
