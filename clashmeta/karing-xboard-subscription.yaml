@@ -1,0 +1,387 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: warning
+external-controller: 127.0.0.1:9090
+clash-for-android:
+  append-system-dns: false
+unified-delay: true
+global-client-fingerprint: chrome
+keep-alive-interval: 360
+proxies: ~
+
+# --- 1. 远程规则集定义 (Rule Providers) ---
+rule-providers:
+  # === 广告拦截 ===
+  reject:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/BanAD.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  adcompany:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/BanADCompany.txt"
+    path: ./ruleset/adcompany.yaml
+    interval: 86400
+
+  # === Google ===
+  google:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
+  googleplay:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GooglePlay.txt"
+    path: ./ruleset/googleplay.yaml
+    interval: 86400
+
+  googlefcm:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GoogleFCM.txt"
+    path: ./ruleset/googlefcm.yaml
+    interval: 86400
+
+  googlegemini:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GoogleGemini.txt"
+    path: ./ruleset/googlegemini.yaml
+    interval: 86400
+
+  # === Apple ===
+  apple:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  # === 流媒体 & 社交 ===
+  proxy-media:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ProxyMedia.txt"
+    path: ./ruleset/proxy-media.yaml
+    interval: 86400
+
+  tiktok:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/TikTok.txt"
+    path: ./ruleset/tiktok.yaml
+    interval: 86400
+
+  instagram:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Instagram.txt"
+    path: ./ruleset/instagram.yaml
+    interval: 86400
+
+  netflix:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Netflix.txt"
+    path: ./ruleset/netflix.yaml
+    interval: 86400
+
+  bilibili:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ChinaMedia.txt"
+    path: ./ruleset/bilibili.yaml
+    interval: 86400
+
+  # === AI & Dev ===
+  openai:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/OpenAI.txt"
+    path: ./ruleset/openai.yaml
+    interval: 86400
+
+  github:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/GitHub.txt"
+    path: ./ruleset/github.yaml
+    interval: 86400
+
+  claude:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Claude.txt"
+    path: ./ruleset/claude.yaml
+    interval: 86400
+
+  # === Microsoft ===
+  bing:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Bing.txt"
+    path: ./ruleset/bing.yaml
+    interval: 86400
+
+  onedrive:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/OneDrive.txt"
+    path: ./ruleset/onedrive.yaml
+    interval: 86400
+
+  microsoft:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Microsoft.txt"
+    path: ./ruleset/microsoft.yaml
+    interval: 86400
+
+  # === Gaming ===
+  gaming:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Xbox.txt"
+    path: ./ruleset/gaming.yaml
+    interval: 86400
+
+  # === 中国直连 ===
+  neteasemusic:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/NetEaseMusic.txt"
+    path: ./ruleset/neteasemusic.yaml
+    interval: 86400
+
+  chinadomain:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ChinaDomain.txt"
+    path: ./ruleset/chinadomain.yaml
+    interval: 86400
+
+  # === Telegram ===
+  telegram:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Telegram.txt"
+    path: ./ruleset/telegram.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/Telegram.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+  # === 代理规则 ===
+  gfwlist:
+    type: http
+    behavior: domain
+    url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@main/clashmeta/providers/ProxyGFWlist.txt"
+    path: ./ruleset/gfwlist.yaml
+    interval: 86400
+
+# --- 2. 策略组配置 ---
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 🔯 故障转移
+
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 180
+    proxies: []
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🔯 故障转移
+
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🏷️ TikTok
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 📸 Instagram
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 💬 Ai平台
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🔍 Google
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: ▶️ Google Play
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🔔 Google FCM
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🧑‍💻 GitHub
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+
+
+  - name: 🔎 微软 Bing
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: ☁️ 微软云盘
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🖥️ 微软服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+
+  - name: 🎵 网易音乐
+    type: select
+    proxies:
+      - 🎯 全球直连
+
+
+
+# --- 3. 规则 (Rules) ---
+rules:
+  # === 本地网络直连 ===
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,localhost,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+
+  # === 广告拦截 ===
+  - RULE-SET,reject,🛑 全球拦截
+  - RULE-SET,adcompany,🛑 全球拦截
+
+  # === Google ===
+  - RULE-SET,google,🔍 Google
+  - RULE-SET,googleplay,▶️ Google Play
+  - RULE-SET,googlefcm,🔔 Google FCM
+  - RULE-SET,googlegemini,💬 Ai平台
+
+  # === Apple ===
+  - RULE-SET,apple,🍎 苹果服务
+
+  # === 流媒体 & 社交 ===
+  - RULE-SET,proxy-media,📹 油管视频
+  - RULE-SET,tiktok,🏷️ TikTok
+  - RULE-SET,instagram,📸 Instagram
+  - RULE-SET,netflix,🎥 奈飞视频
+  - RULE-SET,bilibili,📺 哔哩哔哩
+
+  # === AI & Dev ===
+  - RULE-SET,openai,💬 Ai平台
+  - RULE-SET,github,🧑‍💻 GitHub
+  - RULE-SET,claude,💬 Ai平台
+
+  # === Microsoft ===
+  - RULE-SET,bing,🔎 微软 Bing
+  - RULE-SET,onedrive,☁️ 微软云盘
+  - RULE-SET,microsoft,🖥️ 微软服务
+
+  # === Gaming ===
+  - RULE-SET,gaming,🎮 游戏平台
+
+  # === 中国直连 ===
+  - RULE-SET,neteasemusic,🎵 网易音乐
+  - RULE-SET,chinadomain,🎯 全球直连
+  - DOMAIN-SUFFIX,cn,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+
+  # === Telegram ===
+  - RULE-SET,telegram,📲 电报消息
+  - RULE-SET,telegramcidr,📲 电报消息,no-resolve
+
+  # === 代理规则 ===
+  - RULE-SET,gfwlist,🚀 节点选择
+
+  # === 兜底 ===
+  - MATCH,🐟 漏网之鱼
