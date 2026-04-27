@@ -204,26 +204,7 @@ proxy-groups:
     interval: 180
     proxies: []
 
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-
-  - name: 🛑 全球拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
-  - name: 🐟 漏网之鱼
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-      - 🔯 故障转移
-
-  # --- 应用分组（独立，不链式引用节点选择）---
+  # --- 应用分组 ---
   - name: 💬 Ai平台
     type: select
     proxies:
@@ -323,6 +304,26 @@ proxy-groups:
     type: select
     proxies:
       - 🎯 全球直连
+
+  # --- 工具分组（放最后）---
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - 🔯 故障转移
 
 # --- 3. 规则（按优先级精确排列）---
 rules:
