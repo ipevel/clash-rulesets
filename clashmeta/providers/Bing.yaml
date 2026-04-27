@@ -1,0 +1,5 @@
+# Bing - 3 rules
+payload:
+  - DOMAIN-SUFFIX,bing.com,Proxy
+  - DOMAIN-SUFFIX,copilot.cloud.microsoft,Proxy
+  - DOMAIN-SUFFIX,copilot.microsoft.com,Proxy

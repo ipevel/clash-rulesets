@@ -1,0 +1,9 @@
+# Xbox - 7 rules
+payload:
+  - DOMAIN-SUFFIX,xbox.com,Proxy
+  - DOMAIN-SUFFIX,xboxab.com,Proxy
+  - DOMAIN-SUFFIX,xboxab.net,Proxy
+  - DOMAIN-SUFFIX,xboxlive.com,Proxy
+  - DOMAIN-SUFFIX,xboxservice.com,Proxy
+  - DOMAIN-SUFFIX,xboxservices.com,Proxy
+  - DOMAIN-SUFFIX,gamepass.com,Proxy

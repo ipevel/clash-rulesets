@@ -1,0 +1,4 @@
+# Claude - 2 rules
+payload:
+  - DOMAIN-SUFFIX,anthropic.com,Proxy
+  - DOMAIN-SUFFIX,claude.ai,Proxy
