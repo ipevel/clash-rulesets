@@ -17,179 +17,179 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/BanAD.yaml"
-    path: ./ruleset/reject.yaml
-    interval: 86400
+    path: ./ruleset/reject-v2.yaml
+    interval: 3600
 
   adcompany:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/BanADCompany.yaml"
-    path: ./ruleset/adcompany.yaml
-    interval: 86400
+    path: ./ruleset/adcompany-v2.yaml
+    interval: 3600
 
   # === AI（精确，放最前面防止截流）===
   openai:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/OpenAI.yaml"
-    path: ./ruleset/openai.yaml
-    interval: 86400
+    path: ./ruleset/openai-v2.yaml
+    interval: 3600
 
   claude:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Claude.yaml"
-    path: ./ruleset/claude.yaml
-    interval: 86400
+    path: ./ruleset/claude-v2.yaml
+    interval: 3600
 
   googlegemini:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/GoogleGemini.yaml"
-    path: ./ruleset/googlegemini.yaml
-    interval: 86400
+    path: ./ruleset/googlegemini-v2.yaml
+    interval: 3600
 
   # === 流媒体 & 社交（YouTube归这里，Google归Google）===
   proxy-media:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/ProxyMedia.yaml"
-    path: ./ruleset/proxy-media.yaml
-    interval: 86400
+    path: ./ruleset/proxy-media-v2.yaml
+    interval: 3600
 
   tiktok:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/TikTok.yaml"
-    path: ./ruleset/tiktok.yaml
-    interval: 86400
+    path: ./ruleset/tiktok-v2.yaml
+    interval: 3600
 
   instagram:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Instagram.yaml"
-    path: ./ruleset/instagram.yaml
-    interval: 86400
+    path: ./ruleset/instagram-v2.yaml
+    interval: 3600
 
   netflix:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Netflix.yaml"
-    path: ./ruleset/netflix.yaml
-    interval: 86400
+    path: ./ruleset/netflix-v2.yaml
+    interval: 3600
 
   # === Google（已剥离YouTube/Play/FCM/Gemini，纯Google）===
   google:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Google.yaml"
-    path: ./ruleset/google.yaml
-    interval: 86400
+    path: ./ruleset/google-v2.yaml
+    interval: 3600
 
   googleplay:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/GooglePlay.yaml"
-    path: ./ruleset/googleplay.yaml
-    interval: 86400
+    path: ./ruleset/googleplay-v2.yaml
+    interval: 3600
 
   googlefcm:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/GoogleFCM.yaml"
-    path: ./ruleset/googlefcm.yaml
-    interval: 86400
+    path: ./ruleset/googlefcm-v2.yaml
+    interval: 3600
 
   # === Apple ===
   apple:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Apple.yaml"
-    path: ./ruleset/apple.yaml
-    interval: 86400
+    path: ./ruleset/apple-v2.yaml
+    interval: 3600
 
   # === Dev ===
   github:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/GitHub.yaml"
-    path: ./ruleset/github.yaml
-    interval: 86400
+    path: ./ruleset/github-v2.yaml
+    interval: 3600
 
   # === Microsoft ===
   bing:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Bing.yaml"
-    path: ./ruleset/bing.yaml
-    interval: 86400
+    path: ./ruleset/bing-v2.yaml
+    interval: 3600
 
   onedrive:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/OneDrive.yaml"
-    path: ./ruleset/onedrive.yaml
-    interval: 86400
+    path: ./ruleset/onedrive-v2.yaml
+    interval: 3600
 
   microsoft:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Microsoft.yaml"
-    path: ./ruleset/microsoft.yaml
-    interval: 86400
+    path: ./ruleset/microsoft-v2.yaml
+    interval: 3600
 
   # === Gaming ===
   gaming:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Xbox.yaml"
-    path: ./ruleset/gaming.yaml
-    interval: 86400
+    path: ./ruleset/gaming-v2.yaml
+    interval: 3600
 
   # === 中国直连 ===
   bilibili:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/ChinaMedia.yaml"
-    path: ./ruleset/bilibili.yaml
-    interval: 86400
+    path: ./ruleset/bilibili-v2.yaml
+    interval: 3600
 
   neteasemusic:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/NetEaseMusic.yaml"
-    path: ./ruleset/neteasemusic.yaml
-    interval: 86400
+    path: ./ruleset/neteasemusic-v2.yaml
+    interval: 3600
 
   chinadomain:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/ChinaDomain.yaml"
-    path: ./ruleset/chinadomain.yaml
-    interval: 86400
+    path: ./ruleset/chinadomain-v2.yaml
+    interval: 3600
 
   # === Telegram ===
   telegram:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Telegram.yaml"
-    path: ./ruleset/telegram.yaml
-    interval: 86400
+    path: ./ruleset/telegram-v2.yaml
+    interval: 3600
 
   telegramcidr:
     type: http
     behavior: ipcidr
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/Telegram.yaml"
-    path: ./ruleset/telegramcidr.yaml
-    interval: 86400
+    path: ./ruleset/telegramcidr-v2.yaml
+    interval: 3600
 
   # === GFWlist 兜底代理 ===
   gfwlist:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/karing-ruleset@65b6686/clashmeta/providers/ProxyGFWlist.yaml"
-    path: ./ruleset/gfwlist.yaml
-    interval: 86400
+    path: ./ruleset/gfwlist-v2.yaml
+    interval: 3600
 
 # --- 2. 策略组配置 ---
 proxy-groups:
