@@ -6,11 +6,10 @@ Clash Meta rulesets generated from [KaringX/karing-ruleset](https://github.com/K
 
 ```
 clashmeta/
-├── providers/          # Individual rule provider .txt files (23 categories)
-├── karing-full.clash.yaml          # Complete ruleset (111,408 rules, 4.5MB)
-├── karing-selected.clash.yaml      # Selected categories only (9,501 rules, 357KB)
-├── karing-ruleproviders.clash.yaml # Xboard template with rule-providers
-└── karing-xboard-subscription.yaml # Full Xboard subscription template
+├── providers/                        # Individual rule provider .txt files (23 categories)
+├── karing-full.clash.yaml            # Complete ruleset (111,408 rules, 4.5MB)
+├── karing-selected.clash.yaml        # Selected categories only (9,501 rules, 357KB)
+└── karing-xboard-subscription.yaml   # Xboard subscription template
 ```
 
 ## Usage
