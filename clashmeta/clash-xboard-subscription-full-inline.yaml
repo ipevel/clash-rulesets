@@ -8,7 +8,7 @@ clash-for-android:
 unified-delay: true
 global-client-fingerprint: chrome
 keep-alive-interval: 360
-proxies: []
+proxies: ~
 rules:
 - DOMAIN-SUFFIX,local,🎯 全球直连
 - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
