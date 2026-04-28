@@ -1,117 +1,14 @@
 mixed-port: 7890
-allow-lan: true
+allow-lan: false
 mode: rule
-log-level: info
-external-controller: 0.0.0.0:9090
-proxy-groups:
-- name: 🚀 节点选择
-  type: select
-  proxies:
-  - 🔯 故障转移
-- name: 🔯 故障转移
-  type: fallback
-  url: http://www.gstatic.com/generate_204
-  interval: 180
-  proxies: []
-- name: 💬 Ai平台
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 📹 油管视频
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🏷️ TikTok
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 📸 Instagram
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🎥 奈飞视频
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🔍 Google
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: ▶️ Google Play
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🔔 Google FCM
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🍎 苹果服务
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🧑‍💻 GitHub
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🔎 微软 Bing
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: ☁️ 微软云盘
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🖥️ 微软服务
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 🎮 游戏平台
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 📲 电报消息
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-- name: 📺 哔哩哔哩
-  type: select
-  proxies:
-  - 🎯 全球直连
-- name: 🎵 网易音乐
-  type: select
-  proxies:
-  - 🎯 全球直连
-- name: 🎯 全球直连
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
-- name: 🛑 全球拦截
-  type: select
-  proxies:
-  - REJECT
-  - DIRECT
-- name: 🐟 漏网之鱼
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - 🎯 全球直连
-  - 🔯 故障转移
+log-level: warning
+external-controller: 127.0.0.1:9090
+clash-for-android:
+  append-system-dns: false
+unified-delay: true
+global-client-fingerprint: chrome
+keep-alive-interval: 360
+proxies: []
 rules:
 - DOMAIN-SUFFIX,local,🎯 全球直连
 - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
