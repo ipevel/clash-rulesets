@@ -1,6 +1,5 @@
-# Microsoft - 79 rules
+# Microsoft - 61 rules (removed overlapping Bing & OneDrive domains)
 payload:
-  - DOMAIN-KEYWORD,1drv,Proxy
   - DOMAIN-KEYWORD,microsoft,Proxy
   - DOMAIN-SUFFIX,aadrm.com,Proxy
   - DOMAIN-SUFFIX,acompli.com,Proxy
@@ -14,9 +13,6 @@ payload:
   - DOMAIN-SUFFIX,azureedge.net,Proxy
   - DOMAIN-SUFFIX,azureiotcentral.com,Proxy
   - DOMAIN-SUFFIX,azurerms.com,Proxy
-  - DOMAIN-SUFFIX,bing.com,Proxy
-  - DOMAIN-SUFFIX,bing.net,Proxy
-  - DOMAIN-SUFFIX,bingapis.com,Proxy
   - DOMAIN-SUFFIX,cloudapp.net,Proxy
   - DOMAIN-SUFFIX,cloudappsecurity.com,Proxy
   - DOMAIN-SUFFIX,edgesuite.net,Proxy
@@ -47,7 +43,6 @@ payload:
   - DOMAIN-SUFFIX,office365.com,Proxy
   - DOMAIN-SUFFIX,officeppe.net,Proxy
   - DOMAIN-SUFFIX,omniroot.com,Proxy
-  - DOMAIN-SUFFIX,onedrive.com,Proxy
   - DOMAIN-SUFFIX,onenote.com,Proxy
   - DOMAIN-SUFFIX,onenote.net,Proxy
   - DOMAIN-SUFFIX,onestore.ms,Proxy
@@ -57,8 +52,6 @@ payload:
   - DOMAIN-SUFFIX,public-trust.com,Proxy
   - DOMAIN-SUFFIX,sfbassets.com,Proxy
   - DOMAIN-SUFFIX,sfx.ms,Proxy
-  - DOMAIN-SUFFIX,sharepoint.com,Proxy
-  - DOMAIN-SUFFIX,sharepointonline.com,Proxy
   - DOMAIN-SUFFIX,skype.com,Proxy
   - DOMAIN-SUFFIX,skypeassets.com,Proxy
   - DOMAIN-SUFFIX,skypeforbusiness.com,Proxy
