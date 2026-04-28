@@ -16,14 +16,14 @@ rule-providers:
   reject:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/BanAD.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/BanAD.yaml"
     path: ./ruleset/reject-v2.yaml
     interval: 3600
 
   adcompany:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/BanADCompany.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/BanADCompany.yaml"
     path: ./ruleset/adcompany-v2.yaml
     interval: 3600
 
@@ -31,21 +31,21 @@ rule-providers:
   openai:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/OpenAI.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/OpenAI.yaml"
     path: ./ruleset/openai-v2.yaml
     interval: 3600
 
   claude:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Claude.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Claude.yaml"
     path: ./ruleset/claude-v2.yaml
     interval: 3600
 
   googlegemini:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/GoogleGemini.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/GoogleGemini.yaml"
     path: ./ruleset/googlegemini-v2.yaml
     interval: 3600
 
@@ -53,28 +53,28 @@ rule-providers:
   proxy-media:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/ProxyMedia.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/ProxyMedia.yaml"
     path: ./ruleset/proxy-media-v2.yaml
     interval: 3600
 
   tiktok:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/TikTok.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/TikTok.yaml"
     path: ./ruleset/tiktok-v2.yaml
     interval: 3600
 
   instagram:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Instagram.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Instagram.yaml"
     path: ./ruleset/instagram-v2.yaml
     interval: 3600
 
   netflix:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Netflix.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Netflix.yaml"
     path: ./ruleset/netflix-v2.yaml
     interval: 3600
 
@@ -82,21 +82,21 @@ rule-providers:
   google:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Google.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Google.yaml"
     path: ./ruleset/google-v2.yaml
     interval: 3600
 
   googleplay:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/GooglePlay.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/GooglePlay.yaml"
     path: ./ruleset/googleplay-v2.yaml
     interval: 3600
 
   googlefcm:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/GoogleFCM.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/GoogleFCM.yaml"
     path: ./ruleset/googlefcm-v2.yaml
     interval: 3600
 
@@ -104,7 +104,7 @@ rule-providers:
   apple:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Apple.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Apple.yaml"
     path: ./ruleset/apple-v2.yaml
     interval: 3600
 
@@ -112,7 +112,7 @@ rule-providers:
   github:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/GitHub.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/GitHub.yaml"
     path: ./ruleset/github-v2.yaml
     interval: 3600
 
@@ -120,21 +120,21 @@ rule-providers:
   bing:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Bing.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Bing.yaml"
     path: ./ruleset/bing-v2.yaml
     interval: 3600
 
   onedrive:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/OneDrive.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/OneDrive.yaml"
     path: ./ruleset/onedrive-v2.yaml
     interval: 3600
 
   microsoft:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Microsoft.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Microsoft.yaml"
     path: ./ruleset/microsoft-v2.yaml
     interval: 3600
 
@@ -142,7 +142,7 @@ rule-providers:
   gaming:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Xbox.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Xbox.yaml"
     path: ./ruleset/gaming-v2.yaml
     interval: 3600
 
@@ -150,21 +150,21 @@ rule-providers:
   bilibili:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/ChinaMedia.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/ChinaMedia.yaml"
     path: ./ruleset/bilibili-v2.yaml
     interval: 3600
 
   neteasemusic:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/NetEaseMusic.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/NetEaseMusic.yaml"
     path: ./ruleset/neteasemusic-v2.yaml
     interval: 3600
 
   chinadomain:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/ChinaDomain.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/ChinaDomain.yaml"
     path: ./ruleset/chinadomain-v2.yaml
     interval: 3600
 
@@ -172,14 +172,14 @@ rule-providers:
   telegram:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Telegram.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Telegram.yaml"
     path: ./ruleset/telegram-v2.yaml
     interval: 3600
 
   telegramcidr:
     type: http
     behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/Telegram.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/Telegram.yaml"
     path: ./ruleset/telegramcidr-v2.yaml
     interval: 3600
 
@@ -187,7 +187,7 @@ rule-providers:
   gfwlist:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@6df486d/clashmeta/providers/ProxyGFWlist.yaml"
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@a75075e/clashmeta/providers/ProxyGFWlist.yaml"
     path: ./ruleset/gfwlist-v2.yaml
     interval: 3600
 
