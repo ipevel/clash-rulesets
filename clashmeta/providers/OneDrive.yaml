@@ -1,9 +1,8 @@
-# OneDrive - 15 rules
+# OneDrive - 18 rules
 payload:
-  - DOMAIN-KEYWORD,1drv,Proxy
-  - DOMAIN-KEYWORD,onedrive,Proxy
-  - DOMAIN-KEYWORD,skydrive,Proxy
+  - DOMAIN-SUFFIX,1drv.com,Proxy
   - DOMAIN-SUFFIX,livefilestore.com,Proxy
+  - DOMAIN-SUFFIX,microsoftpersonalcontent.com,Proxy
   - DOMAIN-SUFFIX,oneclient.sfx.ms,Proxy
   - DOMAIN-SUFFIX,onedrive.com,Proxy
   - DOMAIN-SUFFIX,onedrive.live.com,Proxy
@@ -14,4 +13,8 @@ payload:
   - DOMAIN-SUFFIX,spoprod-a.akamaihd.net,Proxy
   - DOMAIN-SUFFIX,storage.live.com,Proxy
   - DOMAIN-SUFFIX,storage.msn.com,Proxy
-  - DOMAIN-SUFFIX,microsoftpersonalcontent.com,Proxy
+  - DOMAIN-KEYWORD,1drv,Proxy
+  - DOMAIN-KEYWORD,onedrive,Proxy
+  - DOMAIN-KEYWORD,skydrive,Proxy
+  - PROCESS-NAME,OneDrive
+  - PROCESS-NAME,OneDriveUpdater

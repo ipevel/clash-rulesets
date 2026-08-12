@@ -1,10 +1,19 @@
-# Netflix - 33 rules
+# Netflix - 38 rules
 payload:
+  - DOMAIN,e13252.dscg.akamaiedge.net,Proxy
+  - DOMAIN,h-netflix.online-metrix.net,Proxy
+  - DOMAIN,netflix.com.edgesuite.net,Proxy
+  - DOMAIN-SUFFIX,cookielaw.org,Proxy
   - DOMAIN-SUFFIX,fast.com,Proxy
+  - DOMAIN-SUFFIX,flxvpn.net,Proxy
+  - DOMAIN-SUFFIX,netflix.ca,Proxy
   - DOMAIN-SUFFIX,netflix.com,Proxy
+  - DOMAIN-SUFFIX,netflix.com.au,Proxy
+  - DOMAIN-SUFFIX,netflix.com.edgesuite.net,Proxy
   - DOMAIN-SUFFIX,netflix.net,Proxy
   - DOMAIN-SUFFIX,netflixdnstest0.com,Proxy
   - DOMAIN-SUFFIX,netflixdnstest1.com,Proxy
+  - DOMAIN-SUFFIX,netflixdnstest10.com,Proxy
   - DOMAIN-SUFFIX,netflixdnstest2.com,Proxy
   - DOMAIN-SUFFIX,netflixdnstest3.com,Proxy
   - DOMAIN-SUFFIX,netflixdnstest4.com,Proxy
@@ -13,23 +22,19 @@ payload:
   - DOMAIN-SUFFIX,netflixdnstest7.com,Proxy
   - DOMAIN-SUFFIX,netflixdnstest8.com,Proxy
   - DOMAIN-SUFFIX,netflixdnstest9.com,Proxy
+  - DOMAIN-SUFFIX,netflixinvestor.com,Proxy
+  - DOMAIN-SUFFIX,netflixstudios.com,Proxy
+  - DOMAIN-SUFFIX,netflixtechblog.com,Proxy
   - DOMAIN-SUFFIX,nflxext.com,Proxy
   - DOMAIN-SUFFIX,nflximg.com,Proxy
   - DOMAIN-SUFFIX,nflximg.net,Proxy
+  - DOMAIN-SUFFIX,nflxsearch.net,Proxy
   - DOMAIN-SUFFIX,nflxso.net,Proxy
   - DOMAIN-SUFFIX,nflxvideo.net,Proxy
-  - IP-CIDR,8.41.4.0/24,Proxy,no-resolve
-  - IP-CIDR,23.246.0.0/18,Proxy,no-resolve
-  - IP-CIDR,37.77.184.0/21,Proxy,no-resolve
-  - IP-CIDR,45.57.0.0/17,Proxy,no-resolve
-  - IP-CIDR,64.120.128.0/17,Proxy,no-resolve
-  - IP-CIDR,66.197.128.0/17,Proxy,no-resolve
-  - IP-CIDR,69.53.224.0/19,Proxy,no-resolve
-  - IP-CIDR,108.175.32.0/20,Proxy,no-resolve
-  - IP-CIDR,185.2.220.0/22,Proxy,no-resolve
-  - IP-CIDR,185.9.188.0/22,Proxy,no-resolve
-  - IP-CIDR,192.173.64.0/18,Proxy,no-resolve
-  - IP-CIDR,198.38.96.0/19,Proxy,no-resolve
-  - IP-CIDR,198.45.48.0/20,Proxy,no-resolve
-  - IP-CIDR,207.45.72.0/22,Proxy,no-resolve
-  - IP-CIDR,208.75.76.0/22,Proxy,no-resolve
+  - DOMAIN-SUFFIX,onetrust.com,Proxy
+  - DOMAIN-SUFFIX,us-west-2.amazonaws.com,Proxy
+  - DOMAIN-KEYWORD,apiproxy-device-prod-nlb-,Proxy
+  - DOMAIN-KEYWORD,dualstack.apiproxy-,Proxy
+  - DOMAIN-KEYWORD,dualstack.ichnaea-web-,Proxy
+  - DOMAIN-KEYWORD,netflixdnstest,Proxy
+  - PROCESS-NAME,com.netflix.mediaclient

@@ -1,8 +1,33 @@
-# GitHub - 6 rules
+# GitHub - 31 rules
 payload:
-  - DOMAIN-KEYWORD,github,Proxy
+  - DOMAIN-SUFFIX,atom.io,Proxy
+  - DOMAIN-SUFFIX,dependabot.com,Proxy
+  - DOMAIN-SUFFIX,ghcr.io,Proxy
+  - DOMAIN-SUFFIX,git.io,Proxy
+  - DOMAIN-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net,Proxy
+  - DOMAIN-SUFFIX,github-avatars.oss-cn-hongkong.aliyuncs.com,Proxy
+  - DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com,Proxy
+  - DOMAIN-SUFFIX,github.blog,Proxy
   - DOMAIN-SUFFIX,github.com,Proxy
+  - DOMAIN-SUFFIX,github.community,Proxy
+  - DOMAIN-SUFFIX,github.dev,Proxy
   - DOMAIN-SUFFIX,github.io,Proxy
   - DOMAIN-SUFFIX,githubapp.com,Proxy
   - DOMAIN-SUFFIX,githubassets.com,Proxy
+  - DOMAIN-SUFFIX,githubcopilot.com,Proxy
+  - DOMAIN-SUFFIX,githubhackathon.com,Proxy
+  - DOMAIN-SUFFIX,githubnext.com,Proxy
+  - DOMAIN-SUFFIX,githubpreview.dev,Proxy
+  - DOMAIN-SUFFIX,githubstatus.com,Proxy
+  - DOMAIN-SUFFIX,githubuniverse.com,Proxy
   - DOMAIN-SUFFIX,githubusercontent.com,Proxy
+  - DOMAIN-SUFFIX,myoctocat.com,Proxy
+  - DOMAIN-SUFFIX,npm.community,Proxy
+  - DOMAIN-SUFFIX,npmjs.com,Proxy
+  - DOMAIN-SUFFIX,npmjs.org,Proxy
+  - DOMAIN-SUFFIX,opensource.guide,Proxy
+  - DOMAIN-SUFFIX,rawgit.com,Proxy
+  - DOMAIN-SUFFIX,rawgithub.com,Proxy
+  - DOMAIN-SUFFIX,repo.new,Proxy
+  - DOMAIN-SUFFIX,thegithubshop.com,Proxy
+  - DOMAIN-KEYWORD,github,Proxy

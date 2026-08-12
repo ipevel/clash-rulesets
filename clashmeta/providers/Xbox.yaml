@@ -1,9 +1,43 @@
-# Xbox - 7 rules
+# Xbox - 41 rules
 payload:
+  - DOMAIN,img-prod-cms-rt-microsoft-com.akamaized.net,Proxy
+  - DOMAIN,login.live.com,Proxy
+  - DOMAIN,logincdn.msauth.net,Proxy
+  - DOMAIN,store-images.s-microsoft.com,Proxy
+  - DOMAIN-SUFFIX,beth.games,Proxy
+  - DOMAIN-SUFFIX,bethesda.net,Proxy
+  - DOMAIN-SUFFIX,bethesdagamestudios.com,Proxy
+  - DOMAIN-SUFFIX,bethsoft.com,Proxy
+  - DOMAIN-SUFFIX,callersbane.com,Proxy
+  - DOMAIN-SUFFIX,forzamotorsport.net,Proxy
+  - DOMAIN-SUFFIX,forzaracingchampionship.com,Proxy
+  - DOMAIN-SUFFIX,forzarc.com,Proxy
+  - DOMAIN-SUFFIX,gamepass.com,Proxy
+  - DOMAIN-SUFFIX,minecraft.net,Proxy
+  - DOMAIN-SUFFIX,minecraftshop.com,Proxy
+  - DOMAIN-SUFFIX,mojang.com,Proxy
+  - DOMAIN-SUFFIX,msgamestudios.com,Proxy
+  - DOMAIN-SUFFIX,orithegame.com,Proxy
+  - DOMAIN-SUFFIX,renovacionxboxlive.com,Proxy
+  - DOMAIN-SUFFIX,tellmewhygame.com,Proxy
+  - DOMAIN-SUFFIX,xbox.co,Proxy
   - DOMAIN-SUFFIX,xbox.com,Proxy
+  - DOMAIN-SUFFIX,xbox.eu,Proxy
+  - DOMAIN-SUFFIX,xbox.org,Proxy
+  - DOMAIN-SUFFIX,xbox360.co,Proxy
+  - DOMAIN-SUFFIX,xbox360.com,Proxy
+  - DOMAIN-SUFFIX,xbox360.eu,Proxy
+  - DOMAIN-SUFFIX,xbox360.org,Proxy
   - DOMAIN-SUFFIX,xboxab.com,Proxy
   - DOMAIN-SUFFIX,xboxab.net,Proxy
+  - DOMAIN-SUFFIX,xboxgamepass.com,Proxy
+  - DOMAIN-SUFFIX,xboxgamestudios.com,Proxy
   - DOMAIN-SUFFIX,xboxlive.com,Proxy
+  - DOMAIN-SUFFIX,xboxone.co,Proxy
+  - DOMAIN-SUFFIX,xboxone.com,Proxy
+  - DOMAIN-SUFFIX,xboxone.eu,Proxy
+  - DOMAIN-SUFFIX,xboxplayanywhere.com,Proxy
   - DOMAIN-SUFFIX,xboxservice.com,Proxy
   - DOMAIN-SUFFIX,xboxservices.com,Proxy
-  - DOMAIN-SUFFIX,gamepass.com,Proxy
+  - DOMAIN-SUFFIX,xboxstudios.com,Proxy
+  - DOMAIN-SUFFIX,xbx.lv,Proxy

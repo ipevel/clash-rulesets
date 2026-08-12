@@ -1,19 +1,37 @@
-# OpenAI - 17 rules
+# OpenAI - 35 rules
 payload:
-  - DOMAIN-KEYWORD,openai,Proxy
+  - DOMAIN,browser-intake-datadoghq.com,Proxy
+  - DOMAIN,chat.openai.com.cdn.cloudflare.net,Proxy
+  - DOMAIN,openai-api.arkoselabs.com,Proxy
+  - DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,Proxy
+  - DOMAIN,openaicomproductionae4b.blob.core.windows.net,Proxy
+  - DOMAIN,production-openaicom-storage.azureedge.net,Proxy
+  - DOMAIN,static.cloudflareinsights.com,Proxy
+  - DOMAIN-SUFFIX,ai.com,Proxy
+  - DOMAIN-SUFFIX,algolia.net,Proxy
+  - DOMAIN-SUFFIX,api.statsig.com,Proxy
   - DOMAIN-SUFFIX,auth0.com,Proxy
-  - DOMAIN-SUFFIX,challenges.cloudflare.com,Proxy
   - DOMAIN-SUFFIX,chatgpt.com,Proxy
+  - DOMAIN-SUFFIX,chatgpt.livekit.cloud,Proxy
   - DOMAIN-SUFFIX,client-api.arkoselabs.com,Proxy
   - DOMAIN-SUFFIX,events.statsigapi.net,Proxy
   - DOMAIN-SUFFIX,featuregates.org,Proxy
+  - DOMAIN-SUFFIX,host.livekit.cloud,Proxy
   - DOMAIN-SUFFIX,identrust.com,Proxy
   - DOMAIN-SUFFIX,intercom.io,Proxy
   - DOMAIN-SUFFIX,intercomcdn.com,Proxy
+  - DOMAIN-SUFFIX,launchdarkly.com,Proxy
   - DOMAIN-SUFFIX,oaistatic.com,Proxy
   - DOMAIN-SUFFIX,oaiusercontent.com,Proxy
+  - DOMAIN-SUFFIX,observeit.net,Proxy
   - DOMAIN-SUFFIX,openai.com,Proxy
   - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,Proxy
+  - DOMAIN-SUFFIX,openaicom.imgix.net,Proxy
+  - DOMAIN-SUFFIX,segment.io,Proxy
   - DOMAIN-SUFFIX,sentry.io,Proxy
   - DOMAIN-SUFFIX,stripe.com,Proxy
-  - DOMAIN-SUFFIX,sora.com,Proxy
+  - DOMAIN-SUFFIX,turn.livekit.cloud,Proxy
+  - DOMAIN-KEYWORD,openai,Proxy
+  - IP-CIDR,24.199.123.28/32,Proxy,no-resolve
+  - IP-CIDR,64.23.132.171/32,Proxy,no-resolve
+  - IP-ASN,20473,Proxy

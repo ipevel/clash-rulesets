@@ -1,12 +1,34 @@
-# TikTok - 10 rules
+# TikTok - 32 rules
 payload:
-  - DOMAIN-KEYWORD,tiktokcdn,Proxy
+  - DOMAIN,lf16-effectcdn.byteeffecttos-g.com,Proxy
+  - DOMAIN,lf16-pkgcdn.pitaya-clientai.com,Proxy
+  - DOMAIN,p16-tiktokcdn-com.akamaized.net,Proxy
+  - DOMAIN,trae-api-sg.mchost.guru,Proxy
+  - DOMAIN-SUFFIX,bytedapm.com,Proxy
+  - DOMAIN-SUFFIX,bytegecko-i18n.com,Proxy
+  - DOMAIN-SUFFIX,byteintlapi.com,Proxy
   - DOMAIN-SUFFIX,byteoversea.com,Proxy
+  - DOMAIN-SUFFIX,capcut.com,Proxy
   - DOMAIN-SUFFIX,ibytedtos.com,Proxy
+  - DOMAIN-SUFFIX,ibyteimg.com,Proxy
   - DOMAIN-SUFFIX,ipstatp.com,Proxy
+  - DOMAIN-SUFFIX,isnssdk.com,Proxy
+  - DOMAIN-SUFFIX,marscode.com,Proxy
   - DOMAIN-SUFFIX,muscdn.com,Proxy
   - DOMAIN-SUFFIX,musical.ly,Proxy
+  - DOMAIN-SUFFIX,sgpstatp.com,Proxy
+  - DOMAIN-SUFFIX,snssdk.com,Proxy
   - DOMAIN-SUFFIX,tik-tokapi.com,Proxy
   - DOMAIN-SUFFIX,tiktok.com,Proxy
+  - DOMAIN-SUFFIX,tiktokcdn-us.com,Proxy
   - DOMAIN-SUFFIX,tiktokcdn.com,Proxy
+  - DOMAIN-SUFFIX,tiktokd.net,Proxy
+  - DOMAIN-SUFFIX,tiktokd.org,Proxy
+  - DOMAIN-SUFFIX,tiktokmusic.app,Proxy
   - DOMAIN-SUFFIX,tiktokv.com,Proxy
+  - DOMAIN-SUFFIX,tiktokv.us,Proxy
+  - DOMAIN-SUFFIX,trae.ai,Proxy
+  - DOMAIN-SUFFIX,ttwebview.com,Proxy
+  - DOMAIN-KEYWORD,musical.ly,Proxy
+  - DOMAIN-KEYWORD,tiktok,Proxy
+  - PROCESS-NAME,com.zhiliaoapp.musically
