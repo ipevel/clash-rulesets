@@ -29,6 +29,7 @@ jobs:
 
       - name: Validate YAML
         run: |
+          pip install pyyaml
           python3 - <<'EOF'
           import yaml, glob, sys
           ok = True
