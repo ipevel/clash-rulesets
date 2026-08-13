@@ -205,6 +205,12 @@ proxy-groups:
     proxies: []
 
   # --- 应用分组 ---
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
   - name: 💬 Ai平台
     type: select
     proxies:
@@ -289,11 +295,6 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 📲 电报消息
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
 
   - name: 📺 哔哩哔哩
     type: select
