@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4356 rules
+# ProxyGFWlist - 4357 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -2307,6 +2307,7 @@ payload:
   - DOMAIN-SUFFIX,livemint.com,Proxy
   - DOMAIN-SUFFIX,livestream.com,Proxy
   - DOMAIN-SUFFIX,livevideo.com,Proxy
+  - DOMAIN-SUFFIX,livingatlas.arcgis.com,Proxy
   - DOMAIN-SUFFIX,livingstream.com,Proxy
   - DOMAIN-SUFFIX,lmarena.ai,Proxy
   - DOMAIN-SUFFIX,localbitcoins.com,Proxy
