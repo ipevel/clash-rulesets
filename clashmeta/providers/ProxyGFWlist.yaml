@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4357 rules
+# ProxyGFWlist - 4359 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -3139,6 +3139,7 @@ payload:
   - DOMAIN-SUFFIX,s-cute.com,Proxy
   - DOMAIN-SUFFIX,s.yimg.com,Proxy
   - DOMAIN-SUFFIX,s3-ap-northeast-1.amazonaws.com,Proxy
+  - DOMAIN-SUFFIX,s3.dualstack.us-west-2.amazonaws.com,Proxy
   - DOMAIN-SUFFIX,sacks.com,Proxy
   - DOMAIN-SUFFIX,sacom.hk,Proxy
   - DOMAIN-SUFFIX,sadistic-v.com,Proxy
@@ -4080,6 +4081,7 @@ payload:
   - DOMAIN-SUFFIX,willw.net,Proxy
   - DOMAIN-SUFFIX,wilsoncenter.org,Proxy
   - DOMAIN-SUFFIX,windscribe.com,Proxy
+  - DOMAIN-SUFFIX,windy.com,Proxy
   - DOMAIN-SUFFIX,wingamestore.com,Proxy
   - DOMAIN-SUFFIX,wingy.site,Proxy
   - DOMAIN-SUFFIX,wionews.com,Proxy
