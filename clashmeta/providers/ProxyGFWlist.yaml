@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4359 rules
+# ProxyGFWlist - 4360 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -2723,6 +2723,7 @@ payload:
   - DOMAIN-SUFFIX,okpool.me,Proxy
   - DOMAIN-SUFFIX,okx.com,Proxy
   - DOMAIN-SUFFIX,old.honeynet.org,Proxy
+  - DOMAIN-SUFFIX,oldmapsonline.org,Proxy
   - DOMAIN-SUFFIX,olehdtv.com,Proxy
   - DOMAIN-SUFFIX,olelive.com,Proxy
   - DOMAIN-SUFFIX,olevod.com,Proxy
