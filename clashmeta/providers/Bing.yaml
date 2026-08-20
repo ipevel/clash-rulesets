@@ -8,5 +8,3 @@ payload:
   - DOMAIN-SUFFIX,bingsandbox.com,Proxy
   - DOMAIN-SUFFIX,bingvisualsearch.com,Proxy
   - DOMAIN-SUFFIX,bingworld.com,Proxy
-  - DOMAIN-SUFFIX,copilot.cloud.microsoft,DIRECT
-  - DOMAIN-SUFFIX,copilot.microsoft.com,DIRECT

@@ -46,7 +46,3 @@ payload:
   - IP-ASN,59930,Proxy
   - IP-ASN,62014,Proxy
   - IP-ASN,62041,Proxy
-  - IP-CIDR,95.161.64.0/20,$app_name,no-resolve
-  - IP-CIDR,2001:67c:4e8::/48,$app_name,no-resolve
-  - IP-CIDR,2001:b28:f23d::/48,$app_name,no-resolve
-  - IP-CIDR,2001:b28:f23f::/48,$app_name,no-resolve

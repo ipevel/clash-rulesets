@@ -32,4 +32,3 @@ payload:
   - DOMAIN-KEYWORD,musical.ly,Proxy
   - DOMAIN-KEYWORD,tiktok,Proxy
   - PROCESS-NAME,com.zhiliaoapp.musically
-  - DOMAIN-KEYWORD,tiktokcdn,$app_name
