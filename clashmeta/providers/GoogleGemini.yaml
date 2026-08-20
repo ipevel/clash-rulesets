@@ -13,3 +13,33 @@ payload:
   - DOMAIN-KEYWORD,colab,Proxy
   - DOMAIN-KEYWORD,developerprofiles,Proxy
   - DOMAIN-KEYWORD,generativelanguage,Proxy
+  - DOMAIN-SUFFIX,gemini.google,$app_name
+  - DOMAIN-SUFFIX,antigravity-unleash.goog,$app_name
+  - DOMAIN-SUFFIX,antigravity.google,$app_name
+  - DOMAIN-SUFFIX,opal.google,$app_name
+  - DOMAIN-SUFFIX,labs.google,$app_name
+  - DOMAIN-SUFFIX,jules.google,$app_name
+  - DOMAIN-SUFFIX,ai.studio,$app_name
+  - DOMAIN-SUFFIX,notebooklm.google,$app_name
+  - DOMAIN-SUFFIX,labs.google.com,$app_name
+  - DOMAIN-SUFFIX,aistudio.google.com,$app_name
+  - DOMAIN-SUFFIX,notebooklm.google.com,$app_name
+  - DOMAIN-SUFFIX,makersuite.google.com,$app_name
+  - DOMAIN-SUFFIX,jules.google.com,$app_name
+  - DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,aicode.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,aida.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,opal.google.com,$app_name
+  - DOMAIN-SUFFIX,generativelanguage.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,geller-pa.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,stitch.withgoogle.com,$app_name
+  - DOMAIN,alkalicore-pa.clients6.google.com,$app_name
+  - DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com,$app_name
+  - DOMAIN,cloudaicompanion.googleapis.com,$app_name
+  - DOMAIN,cloudcode-pa.googleapis.com,$app_name
+  - DOMAIN,daily-cloudcode-pa.googleapis.com,$app_name
+  - DOMAIN,notebooklm-pa.googleapis.com,$app_name
+  - DOMAIN,notebooklm.googleapis.com,$app_name
+  - DOMAIN,antigravity-pa.googleapis.com,$app_name
+  - DOMAIN,antigravity.googleapis.com,$app_name

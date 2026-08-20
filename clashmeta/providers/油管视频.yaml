@@ -1,187 +1,5 @@
-# ProxyMedia - 182 rules
+# 油管视频
 payload:
-  - DOMAIN-SUFFIX,ggpht.com,Proxy
-  - DOMAIN-SUFFIX,googlevideo.com,Proxy
-  - DOMAIN-SUFFIX,gvt1.com,Proxy
-  - DOMAIN-SUFFIX,gvt2.com,Proxy
-  - DOMAIN-SUFFIX,video.google.com,Proxy
-  - DOMAIN-SUFFIX,wide-youtube.l.google.com,Proxy
-  - DOMAIN-SUFFIX,withyoutube.com,Proxy
-  - DOMAIN-SUFFIX,youtu.be,Proxy
-  - DOMAIN-SUFFIX,youtube,Proxy
-  - DOMAIN-SUFFIX,youtube-nocookie.com,Proxy
-  - DOMAIN-SUFFIX,youtube-ui.l.google.com,Proxy
-  - DOMAIN-SUFFIX,youtube.ae,Proxy
-  - DOMAIN-SUFFIX,youtube.al,Proxy
-  - DOMAIN-SUFFIX,youtube.am,Proxy
-  - DOMAIN-SUFFIX,youtube.at,Proxy
-  - DOMAIN-SUFFIX,youtube.az,Proxy
-  - DOMAIN-SUFFIX,youtube.ba,Proxy
-  - DOMAIN-SUFFIX,youtube.be,Proxy
-  - DOMAIN-SUFFIX,youtube.bg,Proxy
-  - DOMAIN-SUFFIX,youtube.bh,Proxy
-  - DOMAIN-SUFFIX,youtube.bo,Proxy
-  - DOMAIN-SUFFIX,youtube.by,Proxy
-  - DOMAIN-SUFFIX,youtube.ca,Proxy
-  - DOMAIN-SUFFIX,youtube.cat,Proxy
-  - DOMAIN-SUFFIX,youtube.ch,Proxy
-  - DOMAIN-SUFFIX,youtube.cl,Proxy
-  - DOMAIN-SUFFIX,youtube.co,Proxy
-  - DOMAIN-SUFFIX,youtube.co.ae,Proxy
-  - DOMAIN-SUFFIX,youtube.co.at,Proxy
-  - DOMAIN-SUFFIX,youtube.co.cr,Proxy
-  - DOMAIN-SUFFIX,youtube.co.hu,Proxy
-  - DOMAIN-SUFFIX,youtube.co.id,Proxy
-  - DOMAIN-SUFFIX,youtube.co.il,Proxy
-  - DOMAIN-SUFFIX,youtube.co.in,Proxy
-  - DOMAIN-SUFFIX,youtube.co.jp,Proxy
-  - DOMAIN-SUFFIX,youtube.co.ke,Proxy
-  - DOMAIN-SUFFIX,youtube.co.kr,Proxy
-  - DOMAIN-SUFFIX,youtube.co.ma,Proxy
-  - DOMAIN-SUFFIX,youtube.co.nz,Proxy
-  - DOMAIN-SUFFIX,youtube.co.th,Proxy
-  - DOMAIN-SUFFIX,youtube.co.tz,Proxy
-  - DOMAIN-SUFFIX,youtube.co.ug,Proxy
-  - DOMAIN-SUFFIX,youtube.co.uk,Proxy
-  - DOMAIN-SUFFIX,youtube.co.ve,Proxy
-  - DOMAIN-SUFFIX,youtube.co.za,Proxy
-  - DOMAIN-SUFFIX,youtube.co.zw,Proxy
-  - DOMAIN-SUFFIX,youtube.com,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ar,Proxy
-  - DOMAIN-SUFFIX,youtube.com.au,Proxy
-  - DOMAIN-SUFFIX,youtube.com.az,Proxy
-  - DOMAIN-SUFFIX,youtube.com.bd,Proxy
-  - DOMAIN-SUFFIX,youtube.com.bh,Proxy
-  - DOMAIN-SUFFIX,youtube.com.bo,Proxy
-  - DOMAIN-SUFFIX,youtube.com.br,Proxy
-  - DOMAIN-SUFFIX,youtube.com.by,Proxy
-  - DOMAIN-SUFFIX,youtube.com.co,Proxy
-  - DOMAIN-SUFFIX,youtube.com.do,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ec,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ee,Proxy
-  - DOMAIN-SUFFIX,youtube.com.eg,Proxy
-  - DOMAIN-SUFFIX,youtube.com.es,Proxy
-  - DOMAIN-SUFFIX,youtube.com.gh,Proxy
-  - DOMAIN-SUFFIX,youtube.com.gr,Proxy
-  - DOMAIN-SUFFIX,youtube.com.gt,Proxy
-  - DOMAIN-SUFFIX,youtube.com.hk,Proxy
-  - DOMAIN-SUFFIX,youtube.com.hn,Proxy
-  - DOMAIN-SUFFIX,youtube.com.hr,Proxy
-  - DOMAIN-SUFFIX,youtube.com.jm,Proxy
-  - DOMAIN-SUFFIX,youtube.com.jo,Proxy
-  - DOMAIN-SUFFIX,youtube.com.kw,Proxy
-  - DOMAIN-SUFFIX,youtube.com.lb,Proxy
-  - DOMAIN-SUFFIX,youtube.com.lv,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ly,Proxy
-  - DOMAIN-SUFFIX,youtube.com.mk,Proxy
-  - DOMAIN-SUFFIX,youtube.com.mt,Proxy
-  - DOMAIN-SUFFIX,youtube.com.mx,Proxy
-  - DOMAIN-SUFFIX,youtube.com.my,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ng,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ni,Proxy
-  - DOMAIN-SUFFIX,youtube.com.om,Proxy
-  - DOMAIN-SUFFIX,youtube.com.pa,Proxy
-  - DOMAIN-SUFFIX,youtube.com.pe,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ph,Proxy
-  - DOMAIN-SUFFIX,youtube.com.pk,Proxy
-  - DOMAIN-SUFFIX,youtube.com.pt,Proxy
-  - DOMAIN-SUFFIX,youtube.com.py,Proxy
-  - DOMAIN-SUFFIX,youtube.com.qa,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ro,Proxy
-  - DOMAIN-SUFFIX,youtube.com.sa,Proxy
-  - DOMAIN-SUFFIX,youtube.com.sg,Proxy
-  - DOMAIN-SUFFIX,youtube.com.sv,Proxy
-  - DOMAIN-SUFFIX,youtube.com.tn,Proxy
-  - DOMAIN-SUFFIX,youtube.com.tr,Proxy
-  - DOMAIN-SUFFIX,youtube.com.tw,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ua,Proxy
-  - DOMAIN-SUFFIX,youtube.com.uy,Proxy
-  - DOMAIN-SUFFIX,youtube.com.ve,Proxy
-  - DOMAIN-SUFFIX,youtube.cr,Proxy
-  - DOMAIN-SUFFIX,youtube.cz,Proxy
-  - DOMAIN-SUFFIX,youtube.de,Proxy
-  - DOMAIN-SUFFIX,youtube.dk,Proxy
-  - DOMAIN-SUFFIX,youtube.ee,Proxy
-  - DOMAIN-SUFFIX,youtube.es,Proxy
-  - DOMAIN-SUFFIX,youtube.fi,Proxy
-  - DOMAIN-SUFFIX,youtube.fr,Proxy
-  - DOMAIN-SUFFIX,youtube.ge,Proxy
-  - DOMAIN-SUFFIX,youtube.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,youtube.gr,Proxy
-  - DOMAIN-SUFFIX,youtube.gt,Proxy
-  - DOMAIN-SUFFIX,youtube.hk,Proxy
-  - DOMAIN-SUFFIX,youtube.hr,Proxy
-  - DOMAIN-SUFFIX,youtube.hu,Proxy
-  - DOMAIN-SUFFIX,youtube.ie,Proxy
-  - DOMAIN-SUFFIX,youtube.in,Proxy
-  - DOMAIN-SUFFIX,youtube.iq,Proxy
-  - DOMAIN-SUFFIX,youtube.is,Proxy
-  - DOMAIN-SUFFIX,youtube.it,Proxy
-  - DOMAIN-SUFFIX,youtube.jo,Proxy
-  - DOMAIN-SUFFIX,youtube.jp,Proxy
-  - DOMAIN-SUFFIX,youtube.kr,Proxy
-  - DOMAIN-SUFFIX,youtube.kz,Proxy
-  - DOMAIN-SUFFIX,youtube.la,Proxy
-  - DOMAIN-SUFFIX,youtube.lk,Proxy
-  - DOMAIN-SUFFIX,youtube.lt,Proxy
-  - DOMAIN-SUFFIX,youtube.lu,Proxy
-  - DOMAIN-SUFFIX,youtube.lv,Proxy
-  - DOMAIN-SUFFIX,youtube.ly,Proxy
-  - DOMAIN-SUFFIX,youtube.ma,Proxy
-  - DOMAIN-SUFFIX,youtube.md,Proxy
-  - DOMAIN-SUFFIX,youtube.me,Proxy
-  - DOMAIN-SUFFIX,youtube.mk,Proxy
-  - DOMAIN-SUFFIX,youtube.mn,Proxy
-  - DOMAIN-SUFFIX,youtube.mx,Proxy
-  - DOMAIN-SUFFIX,youtube.my,Proxy
-  - DOMAIN-SUFFIX,youtube.ng,Proxy
-  - DOMAIN-SUFFIX,youtube.ni,Proxy
-  - DOMAIN-SUFFIX,youtube.nl,Proxy
-  - DOMAIN-SUFFIX,youtube.no,Proxy
-  - DOMAIN-SUFFIX,youtube.pa,Proxy
-  - DOMAIN-SUFFIX,youtube.pe,Proxy
-  - DOMAIN-SUFFIX,youtube.ph,Proxy
-  - DOMAIN-SUFFIX,youtube.pk,Proxy
-  - DOMAIN-SUFFIX,youtube.pl,Proxy
-  - DOMAIN-SUFFIX,youtube.pr,Proxy
-  - DOMAIN-SUFFIX,youtube.pt,Proxy
-  - DOMAIN-SUFFIX,youtube.qa,Proxy
-  - DOMAIN-SUFFIX,youtube.ro,Proxy
-  - DOMAIN-SUFFIX,youtube.rs,Proxy
-  - DOMAIN-SUFFIX,youtube.ru,Proxy
-  - DOMAIN-SUFFIX,youtube.sa,Proxy
-  - DOMAIN-SUFFIX,youtube.se,Proxy
-  - DOMAIN-SUFFIX,youtube.sg,Proxy
-  - DOMAIN-SUFFIX,youtube.si,Proxy
-  - DOMAIN-SUFFIX,youtube.sk,Proxy
-  - DOMAIN-SUFFIX,youtube.sn,Proxy
-  - DOMAIN-SUFFIX,youtube.soy,Proxy
-  - DOMAIN-SUFFIX,youtube.sv,Proxy
-  - DOMAIN-SUFFIX,youtube.tn,Proxy
-  - DOMAIN-SUFFIX,youtube.tv,Proxy
-  - DOMAIN-SUFFIX,youtube.ua,Proxy
-  - DOMAIN-SUFFIX,youtube.ug,Proxy
-  - DOMAIN-SUFFIX,youtube.uy,Proxy
-  - DOMAIN-SUFFIX,youtube.vn,Proxy
-  - DOMAIN-SUFFIX,youtubeeducation.com,Proxy
-  - DOMAIN-SUFFIX,youtubeembeddedplayer.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,youtubefanfest.com,Proxy
-  - DOMAIN-SUFFIX,youtubegaming.com,Proxy
-  - DOMAIN-SUFFIX,youtubego.co.id,Proxy
-  - DOMAIN-SUFFIX,youtubego.co.in,Proxy
-  - DOMAIN-SUFFIX,youtubego.com,Proxy
-  - DOMAIN-SUFFIX,youtubego.com.br,Proxy
-  - DOMAIN-SUFFIX,youtubego.id,Proxy
-  - DOMAIN-SUFFIX,youtubego.in,Proxy
-  - DOMAIN-SUFFIX,youtubei.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,youtubekids.com,Proxy
-  - DOMAIN-SUFFIX,youtubemobilesupport.com,Proxy
-  - DOMAIN-SUFFIX,yt.be,Proxy
-  - DOMAIN-SUFFIX,ytimg.com,Proxy
-  - DOMAIN-KEYWORD,youtube,Proxy
-  - IP-CIDR,172.110.32.0/21,Proxy,no-resolve
-  - IP-CIDR,216.73.80.0/20,Proxy,no-resolve
-  - IP-CIDR6,2620:120:e000::/40,Proxy,no-resolve
   - DOMAIN-KEYWORD,anthropic,$app_name
   - DOMAIN-KEYWORD,claude,$app_name
   - DOMAIN-KEYWORD,openai,$app_name
@@ -201,10 +19,12 @@ payload:
   - DOMAIN-KEYWORD,netflixdnstest,$app_name
   - DOMAIN-KEYWORD,nivod,$app_name
   - DOMAIN-KEYWORD,olevod,$app_name
+  - DOMAIN-KEYWORD,openai,$app_name
   - DOMAIN-KEYWORD,-spotify-,$app_name
   - DOMAIN-KEYWORD,spotify.com,$app_name
   - DOMAIN-KEYWORD,tiktokcdn,$app_name
   - DOMAIN-KEYWORD,ttvnw,$app_name
+  - DOMAIN-KEYWORD,youtube,$app_name
   - DOMAIN-SUFFIX,edgedatg.com,$app_name
   - DOMAIN-SUFFIX,go.com,$app_name
   - DOMAIN-SUFFIX,ai.azure.com,$app_name
@@ -303,6 +123,7 @@ payload:
   - DOMAIN-SUFFIX,encoretvb.com,$app_name
   - DOMAIN-SUFFIX,fox.com,$app_name
   - DOMAIN-SUFFIX,foxdcg.com,$app_name
+  - DOMAIN-SUFFIX,uplynk.com,$app_name
   - DOMAIN-SUFFIX,hbo.com,$app_name
   - DOMAIN-SUFFIX,hbogo.com,$app_name
   - DOMAIN-SUFFIX,hbomax.com,$app_name
@@ -390,7 +211,20 @@ payload:
   - DOMAIN-SUFFIX,olevod.io,$app_name
   - DOMAIN-SUFFIX,olevod.tv,$app_name
   - DOMAIN-SUFFIX,olevodtv.com,$app_name
+  - DOMAIN-SUFFIX,auth0.com,$app_name
   - DOMAIN-SUFFIX,challenges.cloudflare.com,$app_name
+  - DOMAIN-SUFFIX,chatgpt.com,$app_name
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,$app_name
+  - DOMAIN-SUFFIX,events.statsigapi.net,$app_name
+  - DOMAIN-SUFFIX,featuregates.org,$app_name
+  - DOMAIN-SUFFIX,identrust.com,$app_name
+  - DOMAIN-SUFFIX,intercom.io,$app_name
+  - DOMAIN-SUFFIX,intercomcdn.com,$app_name
+  - DOMAIN-SUFFIX,oaistatic.com,$app_name
+  - DOMAIN-SUFFIX,oaiusercontent.com,$app_name
+  - DOMAIN-SUFFIX,openai.com,$app_name
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,$app_name
+  - DOMAIN-SUFFIX,sentry.io,$app_name
   - DOMAIN-SUFFIX,stripe.com,$app_name
   - DOMAIN-SUFFIX,pbs.org,$app_name
   - DOMAIN-SUFFIX,pandora.com,$app_name
@@ -435,6 +269,17 @@ payload:
   - DOMAIN-SUFFIX,viu.com,$app_name
   - DOMAIN-SUFFIX,viu.now.com,$app_name
   - DOMAIN-SUFFIX,viu.tv,$app_name
+  - DOMAIN-SUFFIX,googlevideo.com,$app_name
+  - DOMAIN-SUFFIX,gvt2.com,$app_name
+  - DOMAIN-SUFFIX,withyoutube.com,$app_name
+  - DOMAIN-SUFFIX,youtu.be,$app_name
+  - DOMAIN-SUFFIX,youtube-nocookie.com,$app_name
+  - DOMAIN-SUFFIX,youtube.com,$app_name
+  - DOMAIN-SUFFIX,youtubeeducation.com,$app_name
+  - DOMAIN-SUFFIX,youtubegaming.com,$app_name
+  - DOMAIN-SUFFIX,youtubekids.com,$app_name
+  - DOMAIN-SUFFIX,yt.be,$app_name
+  - DOMAIN-SUFFIX,ytimg.com,$app_name
   - DOMAIN,ai.google.dev,$app_name
   - DOMAIN,aistudio.google.com,$app_name
   - DOMAIN,api.githubcopilot.com,$app_name

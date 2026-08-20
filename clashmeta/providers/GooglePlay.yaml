@@ -2,3 +2,26 @@
 payload:
   - MAIN-SUFFIX,googleplay.com,Proxy
   - OCESS-NAME,com.google.android.play.games
+  - DOMAIN-SUFFIX,googleplay.com,$app_name
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,$app_name
+  - DOMAIN-SUFFIX,play-fe.googleapis.com,$app_name
+  - DOMAIN-SUFFIX,play-games.googleusercontent.com,$app_name
+  - DOMAIN-SUFFIX,play-lh.googleusercontent.com,$app_name
+  - DOMAIN-SUFFIX,play.google.com,$app_name
+  - DOMAIN-SUFFIX,play.googleapis.com,$app_name
+  - DOMAIN,r,$app_name
+  - DOMAIN,e,$app_name
+  - DOMAIN,d,$app_name
+  - DOMAIN,i,$app_name
+  - DOMAIN,c,$app_name
+  - DOMAIN,t,$app_name
+  - DOMAIN,o,$app_name
+  - DOMAIN,.,$app_name
+  - DOMAIN,p,$app_name
+  - DOMAIN,l,$app_name
+  - DOMAIN,a,$app_name
+  - DOMAIN,y,$app_name
+  - DOMAIN,g,$app_name
+  - DOMAIN,m,$app_name
+  - DOMAIN-REGEX,^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.xn--ngstr-lra8j\.com$,$app_name
+  - DOMAIN-REGEX,^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.googlevideo\.com$,$app_name

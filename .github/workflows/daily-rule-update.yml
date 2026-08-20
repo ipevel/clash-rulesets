@@ -27,6 +27,12 @@ jobs:
         run: |
           python3 scripts/generate_providers.py --update-template
 
+      - name: Refactor config (RULE-SET extract + dedup)
+        run: |
+          # 把内联大段抽成 RULE-SET 引用（full 配置启动内存 5MB→200KB）
+          # 同时全文去重（去 ~15000 条重复规则）
+          python3 scripts/refactor_to_rule_set.py
+
       - name: Validate YAML
         run: |
           pip install pyyaml

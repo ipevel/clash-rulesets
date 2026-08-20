@@ -562,3 +562,4 @@ payload:
   - DOMAIN-KEYWORD,skydrive,Proxy
   - PROCESS-NAME,OneDrive
   - PROCESS-NAME,OneDriveUpdater
+  - DOMAIN-SUFFIX,msn.cn,DIRECT
