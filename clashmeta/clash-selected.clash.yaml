@@ -201,13 +201,11 @@ rules:
 - DOMAIN-SUFFIX,storage.msn.com,$app_name
 - DOMAIN-SUFFIX,microsoftpersonalcontent.com,$app_name
   # === 微软服务 (79 rules) ===
-- DOMAIN-KEYWORD,1drv,$app_name
 - DOMAIN-KEYWORD,microsoft,$app_name
 - DOMAIN-SUFFIX,aadrm.com,$app_name
 - DOMAIN-SUFFIX,acompli.com,$app_name
 - DOMAIN-SUFFIX,acompli.net,$app_name
 - DOMAIN-SUFFIX,aka.ms,$app_name
-- DOMAIN-SUFFIX,akadns.net,$app_name
 - DOMAIN-SUFFIX,aspnetcdn.com,$app_name
 - DOMAIN-SUFFIX,assets-yammer.com,$app_name
 - DOMAIN-SUFFIX,azure.com,$app_name
@@ -215,7 +213,6 @@ rules:
 - DOMAIN-SUFFIX,azureedge.net,$app_name
 - DOMAIN-SUFFIX,azureiotcentral.com,$app_name
 - DOMAIN-SUFFIX,azurerms.com,$app_name
-- DOMAIN-SUFFIX,bing.com,$app_name
 - DOMAIN-SUFFIX,bing.net,$app_name
 - DOMAIN-SUFFIX,bingapis.com,$app_name
 - DOMAIN-SUFFIX,cloudapp.net,$app_name
@@ -248,7 +245,6 @@ rules:
 - DOMAIN-SUFFIX,office365.com,$app_name
 - DOMAIN-SUFFIX,officeppe.net,$app_name
 - DOMAIN-SUFFIX,omniroot.com,$app_name
-- DOMAIN-SUFFIX,onedrive.com,$app_name
 - DOMAIN-SUFFIX,onenote.com,$app_name
 - DOMAIN-SUFFIX,onenote.net,$app_name
 - DOMAIN-SUFFIX,onestore.ms,$app_name
@@ -258,8 +254,6 @@ rules:
 - DOMAIN-SUFFIX,public-trust.com,$app_name
 - DOMAIN-SUFFIX,sfbassets.com,$app_name
 - DOMAIN-SUFFIX,sfx.ms,$app_name
-- DOMAIN-SUFFIX,sharepoint.com,$app_name
-- DOMAIN-SUFFIX,sharepointonline.com,$app_name
 - DOMAIN-SUFFIX,skype.com,$app_name
 - DOMAIN-SUFFIX,skypeassets.com,$app_name
 - DOMAIN-SUFFIX,skypeforbusiness.com,$app_name
@@ -387,7 +381,6 @@ rules:
 - IP-CIDR,91.108.12.0/22,$app_name,no-resolve
 - IP-CIDR,91.108.16.0/22,$app_name,no-resolve
 - IP-CIDR,91.108.56.0/22,$app_name,no-resolve
-- IP-CIDR,149.154.160.0/20,$app_name,no-resolve
 - IP-CIDR6,2001:67c:4e8::/48,$app_name,no-resolve
 - IP-CIDR6,2001:b28:f23d::/48,$app_name,no-resolve
 - IP-CIDR6,2001:b28:f23f::/48,$app_name,no-resolve

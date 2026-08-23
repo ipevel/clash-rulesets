@@ -24,7 +24,6 @@ payload:
   - DOMAIN-KEYWORD,1drv,$app_name
   - DOMAIN-KEYWORD,onedrive,$app_name
   - DOMAIN-KEYWORD,skydrive,$app_name
-  - DOMAIN-KEYWORD,porn,$app_name
   - DOMAIN-KEYWORD,ttvnw,$app_name
   - DOMAIN-SUFFIX,1password.com,$app_name
   - DOMAIN-SUFFIX,adguard.org,$app_name
@@ -180,10 +179,8 @@ payload:
   - DOMAIN-SUFFIX,gitlab.io,$app_name
   - DOMAIN-SUFFIX,jitpack.io,$app_name
   - DOMAIN-SUFFIX,maven.org,$app_name
-  - DOMAIN-SUFFIX,medium.com,$app_name
   - DOMAIN-SUFFIX,mvnrepository.com,$app_name
   - DOMAIN-SUFFIX,quay.io,$app_name
-  - DOMAIN-SUFFIX,reddit.com,$app_name
   - DOMAIN-SUFFIX,redhat.com,$app_name
   - DOMAIN-SUFFIX,sonatype.org,$app_name
   - DOMAIN-SUFFIX,sourcegraph.com,$app_name
@@ -191,8 +188,6 @@ payload:
   - DOMAIN-SUFFIX,spring.net,$app_name
   - DOMAIN-SUFFIX,stackoverflow.com,$app_name
   - DOMAIN-SUFFIX,compose-spec.io,$app_name
-  - DOMAIN-SUFFIX,docker.com,$app_name
-  - DOMAIN-SUFFIX,docker.io,$app_name
   - DOMAIN-SUFFIX,dockerhub.com,$app_name
   - DOMAIN-SUFFIX,discord.co,$app_name
   - DOMAIN-SUFFIX,discord.com,$app_name
@@ -247,7 +242,6 @@ payload:
   - DOMAIN-SUFFIX,nhncorp.jp,$app_name
   - DOMAIN-SUFFIX,openai.com,$app_name
   - DOMAIN-SUFFIX,challenges.cloudflare.com,$app_name
-  - DOMAIN-SUFFIX,livefilestore.com,$app_name
   - DOMAIN-SUFFIX,oneclient.sfx.ms,$app_name
   - DOMAIN-SUFFIX,onedrive.com,$app_name
   - DOMAIN-SUFFIX,onedrive.live.com,$app_name
@@ -283,7 +277,6 @@ payload:
   - DOMAIN-SUFFIX,pximg.net,$app_name
   - DOMAIN-SUFFIX,fanbox.cc,$app_name
   - DOMAIN-SUFFIX,amplitude.com,$app_name
-  - DOMAIN-SUFFIX,firebaseio.com,$app_name
   - DOMAIN-SUFFIX,hockeyapp.net,$app_name
   - DOMAIN-SUFFIX,readdle.com,$app_name
   - DOMAIN-SUFFIX,smartmailcloud.com,$app_name
@@ -303,7 +296,6 @@ payload:
   - DOMAIN-SUFFIX,taptap.tw,$app_name
   - DOMAIN-SUFFIX,twitch.tv,$app_name
   - DOMAIN-SUFFIX,ttvnw.net,$app_name
-  - DOMAIN-SUFFIX,jtvnw.net,$app_name
   - DOMAIN-SUFFIX,t.co,$app_name
   - DOMAIN-SUFFIX,twimg.co,$app_name
   - DOMAIN-SUFFIX,twimg.com,$app_name
@@ -415,7 +407,6 @@ payload:
   - IP-CIDR,2001:67c:4e8::/48,$app_name,no-resolve
   - IP-CIDR,2001:b28:f23d::/48,$app_name,no-resolve
   - IP-CIDR,2001:b28:f23f::/48,$app_name,no-resolve
-  - IP-CIDR,18.194.0.0/15,$app_name,no-resolve
   - IP-CIDR,34.224.0.0/12,$app_name,no-resolve
   - IP-CIDR,54.242.0.0/15,$app_name,no-resolve
   - IP-CIDR,50.22.198.204/30,$app_name,no-resolve

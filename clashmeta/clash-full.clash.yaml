@@ -218,8 +218,6 @@ rules:
 - DOMAIN,rewards.hypixel.net,DIRECT
 - RULE-SET,Xbox.yaml,Proxy
   # LAN
-- DOMAIN-SUFFIX,local,DIRECT
-- DOMAIN-SUFFIX,localhost,DIRECT
 - IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR6,::1/128,DIRECT,no-resolve
 - IP-CIDR6,fc00::/7,DIRECT,no-resolve
