@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4362 rules
+# ProxyGFWlist - 4366 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -1861,6 +1861,7 @@ payload:
   - DOMAIN-SUFFIX,himemix.com,Proxy
   - DOMAIN-SUFFIX,hindustantimes.com,Proxy
   - DOMAIN-SUFFIX,hinet.net,Proxy
+  - DOMAIN-SUFFIX,historylines.net,Proxy
   - DOMAIN-SUFFIX,hitbtc.com,Proxy
   - DOMAIN-SUFFIX,hitomi.la,Proxy
   - DOMAIN-SUFFIX,hive.blog,Proxy
@@ -2203,6 +2204,7 @@ payload:
   - DOMAIN-SUFFIX,kinmen.travel,Proxy
   - DOMAIN-SUFFIX,kinokuniya.com,Proxy
   - DOMAIN-SUFFIX,kiwi.kz,Proxy
+  - DOMAIN-SUFFIX,kiwix.org,Proxy
   - DOMAIN-SUFFIX,kk-whys.co.jp,Proxy
   - DOMAIN-SUFFIX,kkbox.com,Proxy
   - DOMAIN-SUFFIX,kknews.cc,Proxy
@@ -2396,6 +2398,7 @@ payload:
   - DOMAIN-SUFFIX,maven.neoforged.net,Proxy
   - DOMAIN-SUFFIX,mcadforums.com,Proxy
   - DOMAIN-SUFFIX,mcaf.ee,Proxy
+  - DOMAIN-SUFFIX,mceindex.com,Proxy
   - DOMAIN-SUFFIX,mcusercontent.com,Proxy
   - DOMAIN-SUFFIX,md-t.org,Proxy
   - DOMAIN-SUFFIX,me.me,Proxy
@@ -3162,6 +3165,7 @@ payload:
   - DOMAIN-SUFFIX,savetibet.org,Proxy
   - DOMAIN-SUFFIX,savetibetstore.org,Proxy
   - DOMAIN-SUFFIX,saveuighur.org,Proxy
+  - DOMAIN-SUFFIX,sb.sb,Proxy
   - DOMAIN-SUFFIX,sbme.me,Proxy
   - DOMAIN-SUFFIX,sbti.unun.dev,Proxy
   - DOMAIN-SUFFIX,schema.org,Proxy
