@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4366 rules
+# ProxyGFWlist - 4368 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -224,6 +224,7 @@ payload:
   - DOMAIN-SUFFIX,api.palworldgame.com,Proxy
   - DOMAIN-SUFFIX,api.pureapk.com,Proxy
   - DOMAIN-SUFFIX,api.recaptcha.net,Proxy
+  - DOMAIN-SUFFIX,api.shuaiapi.com,Proxy
   - DOMAIN-SUFFIX,api.steampowered.com,Proxy
   - DOMAIN-SUFFIX,api5.futunn.com,Proxy
   - DOMAIN-SUFFIX,apiary.io,Proxy
@@ -4179,6 +4180,7 @@ payload:
   - DOMAIN-SUFFIX,x.com,Proxy
   - DOMAIN-SUFFIX,x.company,Proxy
   - DOMAIN-SUFFIX,x3guide.com,Proxy
+  - DOMAIN-SUFFIX,x86.fr,Proxy
   - DOMAIN-SUFFIX,xbabe.com,Proxy
   - DOMAIN-SUFFIX,xbookcn.com,Proxy
   - DOMAIN-SUFFIX,xbtce.com,Proxy
