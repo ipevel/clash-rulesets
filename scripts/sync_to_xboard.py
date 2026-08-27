@@ -9,11 +9,18 @@ sync_to_xboard.py — 把 clash-xboard-subscription.yaml 全量同步到 xboard 
 
 依赖: pymysql (pip install pymysql), sshpass (仅密码登录节点时需要)
 
-密钥: 从仓库根目录 .secrets.json 读取（该文件已被 .gitignore 忽略，严禁提交）:
+配置/密钥: 从仓库根目录 .secrets.json 读取（该文件已被 .gitignore 忽略，严禁提交）。
+仓库内不含任何真实地址/密钥；数据库与节点信息全部由 .secrets.json 或环境变量提供，例如:
   {
+    "db_host": "...",
+    "db_user": "...",
+    "db_port": "3306",
+    "db_name": "xboard",
     "db_pass": "...",
-    "rn_pass": "...",
-    "tarek_key": "<SSH_KEY>"
+    "nodes": [
+      {"host": "...", "port": 22, "key": "/path/to/private/key", "password": null},
+      {"host": "...", "port": 22, "key": null, "password": "..."}
+    ]
   }
 """
 import os
@@ -38,11 +45,11 @@ if os.path.isfile(_secrets_path):
         SECRETS = json.load(_f)
 
 DB = dict(
-    host=os.environ.get("DB_HOST", "***REMOVED***"),
-    port=int(os.environ.get("DB_PORT", "3306")),
-    user=os.environ.get("DB_USER", "xboard"),
+    host=os.environ.get("DB_HOST", SECRETS.get("db_host", "")),
+    port=int(os.environ.get("DB_PORT", SECRETS.get("db_port", "3306"))),
+    user=os.environ.get("DB_USER", SECRETS.get("db_user", "")),
     password=os.environ.get("DB_PASS", SECRETS.get("db_pass", "")),
-    database=os.environ.get("DB_NAME", "xboard"),
+    database=os.environ.get("DB_NAME", SECRETS.get("db_name", "xboard")),
     charset="utf8mb4",
 )
 
@@ -51,10 +58,9 @@ TEMPLATE_IDS = [2, 3, 4]  # 2=clash, 3=clashmeta, 4=stash
 # 需要清 Redis 缓存的面板节点 (host, port, 认证方式)
 # 注意: Xboard 的 SubscribeTemplate::getContent() 用 Redis remember(3600) 缓存模板 1 小时，
 # 直接改库必须清缓存才能立即生效（缓存键在 db1: xboard_database_xboard_cachesubscribe_template:*）
-NODES = [
-    {"host": "<NODE1_IP>", "port": 54669, "key": SECRETS.get("tarek_key", "<SSH_KEY>"), "password": None},  # Tarek洛杉矶
-    {"host": "<NODE2_IP>", "port": 22, "key": None, "password": SECRETS.get("rn_pass", "")},   # RN美国
-]
+# 节点清单完全从 .secrets.json 的 "nodes" 字段读取（仓库内不保留真实地址）。
+# 每项: {"host": ..., "port": ..., "key": 私钥路径或null, "password": 密码或null}
+NODES = SECRETS.get("nodes", [])
 
 def _ssh_cmd(node):
     """构造 SSH 清缓存命令。"""
@@ -72,6 +78,9 @@ def _ssh_cmd(node):
 def main():
     if not os.path.isfile(TEMPLATE_FILE):
         print(f"ERROR: 模板文件不存在: {TEMPLATE_FILE}")
+        sys.exit(1)
+    if not DB["host"]:
+        print("ERROR: 缺少数据库主机（.secrets.json 未配置 db_host 或 DB_HOST 环境变量）")
         sys.exit(1)
     if not DB["password"]:
         print("ERROR: 缺少数据库密码（.secrets.json 未配置 db_pass 或 DB_PASS 环境变量）")
