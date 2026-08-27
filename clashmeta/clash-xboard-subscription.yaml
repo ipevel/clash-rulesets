@@ -195,35 +195,7 @@ rule-providers:
 proxy-groups:
   - name: 🚀 节点选择
     type: select
-    proxies:
-      - 🇭🇰 香港负载均衡
-      - 🇯🇵 日本负载均衡
-      - 🇺🇸 美国负载均衡
-
-  # --- 地区负载均衡（按旗帜分组，仅香港/日本/美国）---
-  - name: 🇭🇰 香港负载均衡
-    type: load-balance
-    strategy: round-robin
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    include-all-proxies: true
-    filter: "🇭🇰"
-
-  - name: 🇯🇵 日本负载均衡
-    type: load-balance
-    strategy: round-robin
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    include-all-proxies: true
-    filter: "🇯🇵"
-
-  - name: 🇺🇸 美国负载均衡
-    type: load-balance
-    strategy: round-robin
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-    include-all-proxies: true
-    filter: "🇺🇸"
+    proxies: []
 
   # --- 应用分组 ---
   - name: 📲 电报消息
