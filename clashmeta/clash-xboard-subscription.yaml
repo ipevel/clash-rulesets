@@ -196,13 +196,34 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
-      - 🔯 故障转移
+      - 🇭🇰 香港负载均衡
+      - 🇯🇵 日本负载均衡
+      - 🇺🇸 美国负载均衡
 
-  - name: 🔯 故障转移
-    type: fallback
+  # --- 地区负载均衡（按旗帜分组，仅香港/日本/美国）---
+  - name: 🇭🇰 香港负载均衡
+    type: load-balance
+    strategy: round-robin
     url: http://www.gstatic.com/generate_204
-    interval: 180
-    proxies: []
+    interval: 300
+    include-all-proxies: true
+    filter: "🇭🇰"
+
+  - name: 🇯🇵 日本负载均衡
+    type: load-balance
+    strategy: round-robin
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    include-all-proxies: true
+    filter: "🇯🇵"
+
+  - name: 🇺🇸 美国负载均衡
+    type: load-balance
+    strategy: round-robin
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    include-all-proxies: true
+    filter: "🇺🇸"
 
   # --- 应用分组 ---
   - name: 📲 电报消息
@@ -324,7 +345,6 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🔯 故障转移
 
 # --- 3. 规则分流逻辑（内联关键词优先匹配，RULE-SET兜底）---
 rules:
