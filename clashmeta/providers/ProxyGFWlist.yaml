@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4368 rules
+# ProxyGFWlist - 4369 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -4132,6 +4132,7 @@ payload:
   - DOMAIN-SUFFIX,wp.com,Proxy
   - DOMAIN-SUFFIX,wplace.live,Proxy
   - DOMAIN-SUFFIX,wpoforum.com,Proxy
+  - DOMAIN-SUFFIX,write.as,Proxy
   - DOMAIN-SUFFIX,writesonic.com,Proxy
   - DOMAIN-SUFFIX,wsj.com,Proxy
   - DOMAIN-SUFFIX,wsj.net,Proxy
