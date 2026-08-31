@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4369 rules
+# ProxyGFWlist - 4371 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com,Proxy
   - DOMAIN-SUFFIX,0rz.tw,Proxy
@@ -1449,6 +1449,7 @@ payload:
   - DOMAIN-SUFFIX,getlantern.org,Proxy
   - DOMAIN-SUFFIX,getmalus.com,Proxy
   - DOMAIN-SUFFIX,getmdl.io,Proxy
+  - DOMAIN-SUFFIX,getmonero.org,Proxy
   - DOMAIN-SUFFIX,getoutline.org,Proxy
   - DOMAIN-SUFFIX,getsession.org,Proxy
   - DOMAIN-SUFFIX,getsync.com,Proxy
@@ -2644,6 +2645,7 @@ payload:
   - DOMAIN-SUFFIX,nhentai.net,Proxy
   - DOMAIN-SUFFIX,nic.cz.cc,Proxy
   - DOMAIN-SUFFIX,nic.gov,Proxy
+  - DOMAIN-SUFFIX,nicoseiga.jp,Proxy
   - DOMAIN-SUFFIX,nicovideo.jp,Proxy
   - DOMAIN-SUFFIX,nightswatch.top,Proxy
   - DOMAIN-SUFFIX,nikke-en.com,Proxy
