@@ -53,7 +53,8 @@ DB = dict(
     charset="utf8mb4",
 )
 
-TEMPLATE_IDS = [2, 3, 4]  # 2=clash, 3=clashmeta, 4=stash
+TEMPLATE_IDS = [int(x) for x in os.environ.get(
+    "TEMPLATE_IDS", "2,3,4").split(",")]  # 2=clash, 3=clashmeta, 4=stash
 
 # 需要清 Redis 缓存的面板节点 (host, port, 认证方式)
 # 注意: Xboard 的 SubscribeTemplate::getContent() 用 Redis remember(3600) 缓存模板 1 小时，
