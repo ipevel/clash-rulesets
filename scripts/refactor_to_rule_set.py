@@ -28,23 +28,17 @@ POLICY = {
     "GoogleGemini": "Proxy", "GoogleFCM": "Proxy", "GooglePlay": "Proxy",
     "Telegram": "Proxy", "TelegramCIDR": "Proxy",
     "Microsoft": "Proxy", "Google": "Proxy",
-    "GitHub": "Proxy", "Bing": "Proxy", "OneDrive": "Proxy", "Xbox": "Proxy",
+    "GitHub": "Proxy", "Bing": "Proxy", "OneDrive": "Proxy",
     "Netflix": "Proxy", "TikTok": "Proxy", "Instagram": "Proxy",
     "ProxyGFWlist": "Proxy", "ProxyMedia": "Proxy",
-    "ChinaDomain": "DIRECT", "ChinaMedia": "DIRECT",
-    "NetEaseMusic": "DIRECT",
+    "ChinaDomain": "DIRECT",
     "BanAD": "REJECT", "BanADCompany": "REJECT",
     "LocalAreaNetwork": "DIRECT", "LAN": "DIRECT",
     "TelegramIP": "Proxy", "Private": "DIRECT",
 }
 
-# selected 配置只外置精选
-SELECTED_ONLY = {
-    "Apple", "OpenAI", "Claude", "GoogleGemini", "GoogleFCM", "GooglePlay",
-    "Telegram", "TelegramCIDR", "Microsoft", "Netflix", "TikTok", "Instagram",
-    "GitHub", "Bing", "OneDrive", "Xbox", "ProxyGFWlist",
-    "ChinaDomain", "ChinaMedia", "NetEaseMusic",
-}
+# selected 配置已废弃（2026-09-15 移除），保留 SELECTED_ONLY 定义仅作历史参考
+SELECTED_ONLY = set()
 
 # 段头正则（捕获前导空格、段名、原条数）
 SECTION_RE = re.compile(r"^(\s*)#\s*(?:===\s*([^\s(]+)\s*\(([0-9]+)\s*rules\)\s*===|([A-Z][A-Za-z0-9 ]+))\s*$")
@@ -195,7 +189,7 @@ def process(config_path, target_sections):
                 for _, _ in segment_rules:
                     stats["deduped"] += 1
 
-            new_lines.append(f"- RULE-SET,{provider_file},{policy}\n")
+            new_lines.append(f"- RULE-SET,{name.lower()},{policy}\n")
             i = end
             continue
 
@@ -256,17 +250,7 @@ def main():
             if n >= 200:
                 full_targets.add(name)
 
-    selected_targets = {n for n in SELECTED_ONLY
-                        if os.path.exists(os.path.join(PROVIDER_DIR, f"{n}.yaml"))}
-    # 加上 selected 配置里 >=200 条的段
-    with open(SELECTED) as f:
-        for line in f:
-            m = SECTION_RE_LOCAL.match(line)
-            if not m: continue
-            name = m.group(2)
-            n = int(m.group(3))
-            if n >= 200:
-                selected_targets.add(name)
+    selected_targets = set()
 
     print("=== full 配置 ===")
     s1 = process(FULL, full_targets)
@@ -274,14 +258,8 @@ def main():
     print(f"  保留内联: {s1['kept_inline']} 条, 去重移除: {s1['deduped']} 条")
     print(f"  追加到 provider: {s1['rules_moved_to_providers']} 条")
 
-    print("\n=== selected 配置 ===")
-    s2 = process(SELECTED, selected_targets)
-    print(f"  扫描段: {s2['sections_seen']}, 抽成 RULE-SET: {s2['extracted']} 段")
-    print(f"  保留内联: {s2['kept_inline']} 条, 去重移除: {s2['deduped']} 条")
-    print(f"  追加到 provider: {s2['rules_moved_to_providers']} 条")
-
     print("\n=== 文件大小 ===")
-    for f in [FULL, SELECTED]:
+    for f in [FULL]:
         if os.path.exists(f):
             print(f"  {os.path.basename(f):35s}  {os.path.getsize(f):>10d} bytes  ({os.path.getsize(f)/1024:.1f} KB)")
 

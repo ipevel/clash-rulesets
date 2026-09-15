@@ -93,19 +93,18 @@ proxy-groups:
 
 rules:
 
-- RULE-SET,Apple.yaml,Proxy
-- RULE-SET,BanAD.yaml,REJECT
-- RULE-SET,BanADCompany.yaml,REJECT
-- RULE-SET,BanEasyList.yaml,REJECT
-- RULE-SET,BanEasyListChina.yaml,REJECT
-- RULE-SET,BanEasyPrivacy.yaml,REJECT
-- RULE-SET,BanProgramAD.yaml,REJECT
-- RULE-SET,Bing.yaml,Proxy
-- RULE-SET,ChinaCompanyIp.yaml,DIRECT
-- RULE-SET,ChinaDomain.yaml,DIRECT
-- RULE-SET,ChinaIp.yaml,DIRECT
-- RULE-SET,ChinaIpV6.yaml,DIRECT
-- RULE-SET,ChinaMedia.yaml,DIRECT
+- RULE-SET,apple,Proxy
+- RULE-SET,banad,REJECT
+- RULE-SET,banadcompany,REJECT
+- RULE-SET,baneasylist,REJECT
+- RULE-SET,baneasylistchina,REJECT
+- RULE-SET,baneasyprivacy,REJECT
+- RULE-SET,banprogramad,REJECT
+- RULE-SET,bing,Proxy
+- RULE-SET,chinacompanyip,DIRECT
+- RULE-SET,chinadomain,DIRECT
+- RULE-SET,chinaip,DIRECT
+- RULE-SET,chinaipv6,DIRECT
   # === Download (2 rules) ===
 - DOMAIN-KEYWORD,aria2,DIRECT
 - DOMAIN-SUFFIX,smtp,DIRECT
@@ -177,13 +176,13 @@ rules:
 - IP-CIDR,fc00::/7,DIRECT,no-resolve
 - IP-CIDR,fe80::/10,DIRECT,no-resolve
 - IP-CIDR,fd00::/8,DIRECT,no-resolve
-- RULE-SET,Microsoft.yaml,Proxy
-- RULE-SET,Netflix.yaml,Proxy
-- RULE-SET,OneDrive.yaml,Proxy
-- RULE-SET,ProxyGFWlist.yaml,Proxy
-- RULE-SET,ProxyLite.yaml,Proxy
-- RULE-SET,ProxyMedia.yaml,Proxy
-- RULE-SET,Telegram.yaml,Proxy
+- RULE-SET,microsoft,Proxy
+- RULE-SET,netflix,Proxy
+- RULE-SET,onedrive,Proxy
+- RULE-SET,proxygfwlist,Proxy
+- RULE-SET,proxylite,Proxy
+- RULE-SET,proxymedia,Proxy
+- RULE-SET,telegram,Proxy
   # === UnBan (31 rules) ===
 - DOMAIN-SUFFIX,ol.epicgames.com,DIRECT
 - DOMAIN-SUFFIX,dizhensubao.getui.com,DIRECT
@@ -216,7 +215,6 @@ rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
 - DOMAIN,rewards.hypixel.net,DIRECT
-- RULE-SET,Xbox.yaml,Proxy
   # LAN
 - IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
 - IP-CIDR6,::1/128,DIRECT,no-resolve
@@ -311,12 +309,6 @@ rule-providers:
     url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIpV6.yaml"
     path: "./ruleset/chinaipv6.yaml"
     interval: 86400
-  chinamedia:
-    type: http
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaMedia.yaml"
-    path: "./ruleset/chinamedia.yaml"
-    interval: 86400
   microsoft:
     type: http
     behavior: domain
@@ -358,10 +350,4 @@ rule-providers:
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Telegram.yaml"
     path: "./ruleset/telegram.yaml"
-    interval: 86400
-  xbox:
-    type: http
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Xbox.yaml"
-    path: "./ruleset/xbox.yaml"
     interval: 86400

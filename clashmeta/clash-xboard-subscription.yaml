@@ -138,34 +138,19 @@ rule-providers:
     path: ./ruleset/microsoft-v2.yaml
     interval: 3600
 
-  # === Gaming ===
-  gaming:
-    type: http
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Xbox.yaml"
-    path: ./ruleset/gaming-v2.yaml
-    interval: 3600
-
   # === 中国直连 ===
-  bilibili:
-    type: http
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaMedia.yaml"
-    path: ./ruleset/bilibili-v2.yaml
-    interval: 3600
-
-  neteasemusic:
-    type: http
-    behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/NetEaseMusic.yaml"
-    path: ./ruleset/neteasemusic-v2.yaml
-    interval: 3600
-
   chinadomain:
     type: http
     behavior: domain
     url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaDomain.yaml"
     path: ./ruleset/chinadomain-v2.yaml
+    interval: 3600
+
+  chinaip:
+    type: http
+    behavior: ipcidr
+    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIp.yaml"
+    path: ./ruleset/chinaip-v2.yaml
     interval: 3600
 
   # === Telegram ===
@@ -280,23 +265,6 @@ proxy-groups:
     type: select
     proxies:
       - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: 🎮 游戏平台
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-
-  - name: 📺 哔哩哔哩
-    type: select
-    proxies:
-      - 🎯 全球直连
-
-  - name: 🎵 网易音乐
-    type: select
-    proxies:
       - 🎯 全球直连
 
   # --- 工具分组（放最后）---
@@ -414,13 +382,9 @@ rules:
   - DOMAIN-SUFFIX,bing.com,🖥️ 微软服务
   - RULE-SET,microsoft,🖥️ 微软服务
 
-  # === Gaming ===
-  - RULE-SET,gaming,🎮 游戏平台
-
   # === 中国直连 ===
-  - RULE-SET,bilibili,📺 哔哩哔哩
-  - RULE-SET,neteasemusic,🎵 网易音乐
   - RULE-SET,chinadomain,🎯 全球直连
+  - RULE-SET,chinaip,🎯 全球直连,no-resolve
   - DOMAIN-SUFFIX,cn,🎯 全球直连
   - GEOIP,CN,🎯 全球直连
 

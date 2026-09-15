@@ -158,11 +158,9 @@ SOURCES = [
     (BM7.format(cat="Bing",      file="Bing.yaml"),      "Bing.yaml",      "Proxy", "rule", True),
     (BM7.format(cat="OneDrive",  file="OneDrive.yaml"),  "OneDrive.yaml",  "Proxy", "rule", True),
     (BM7.format(cat="Microsoft", file="Microsoft.yaml"), "Microsoft.yaml", "Proxy", "rule", True),
-    (BM7.format(cat="Xbox",      file="Xbox.yaml"),      "Xbox.yaml",      "Proxy", "rule", True),
     # --- 国内 ---
-    (BM7.format(cat="BiliBili",     file="BiliBili.yaml"),     "ChinaMedia.yaml",  "DIRECT", "rule", False),
-    (BM7.format(cat="NetEaseMusic", file="NetEaseMusic.yaml"), "NetEaseMusic.yaml", "DIRECT", "rule", False),
     (BM7.format(cat="China",        file="China_Domain.yaml"), "ChinaDomain.yaml",  "DIRECT", "auto", False),
+    (LOYO.format(file="cncidr.txt"), "ChinaIp.yaml", "DIRECT", "cidr", False),
     # --- Telegram / GFW ---
     (BM7.format(cat="Telegram", file="Telegram.yaml"), "Telegram.yaml", "Proxy", "rule", True),
     (LOYO.format(file="gfw.txt"),           "ProxyGFWlist.yaml", "Proxy", "adguard", True),
@@ -209,7 +207,7 @@ def main():
             with open(gpath) as f:
                 for line in f:
                     if line.startswith("  - DOMAIN") or line.startswith("  - PROCESS"):
-                        google_rules.append(line.strip()[4:])
+                        google_rules.append(line.strip()[2:])
         play_kw = ("googleplay", "play.google", "playgames", "android.play")
         play = [r for r in google_rules if any(k in r.lower() for k in play_kw)]
         rest = [r for r in google_rules if not any(k in r.lower() for k in play_kw)]
