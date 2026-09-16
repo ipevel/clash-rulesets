@@ -231,7 +231,7 @@ def main():
             with open(TEMPLATE) as f:
                 text = f.read()
             new_text, n = re.subn(
-                r"(https://fastly\.jsdelivr\.net/gh/ipevel/clash-rulesets)@[0-9a-f]+(/clashmeta/providers/)",
+                r"(https://cdn\.jsdelivr\.net/gh/ipevel/clash-rulesets)@[0-9a-f]+(/clashmeta/providers/)",
                 r"\1@main\2", text)
             # telegramcidr 指向新文件 TelegramCIDR.yaml
             new_text = new_text.replace(
