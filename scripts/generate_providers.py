@@ -103,9 +103,10 @@ def to_rule(item, policy, kind=None):
         dom = item.lstrip("+.'\"").strip()
         return f"DOMAIN-SUFFIX,{dom},{policy}"
     if kind == "cidr":
+        # 纯 IP 段输出（供 behavior: ipcidr 的 rule-provider 使用，不带规则前缀/策略）
         if "/" in item:
-            return f"IP-CIDR,{item},{policy},no-resolve"
-        return f"IP-CIDR,{item}/32,{policy},no-resolve"
+            return item
+        return f"{item}/32"
     return None
 
 def filter_cn_proxy(rules):
