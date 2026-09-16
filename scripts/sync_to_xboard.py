@@ -36,6 +36,9 @@ except ImportError:
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_FILE = os.environ.get(
     "TEMPLATE_FILE", os.path.join(BASE, "clashmeta", "clash-xboard-subscription.yaml"))
+# stash 模板: 从 stash-rulesets 仓库拉 stash-full.yaml (Stash 原生格式)
+STASH_TEMPLATE_FILE = os.environ.get(
+    "STASH_TEMPLATE_FILE", os.path.join(BASE, "..", "stash-rulesets", "stash", "stash-full.yaml"))
 
 # ---- 本地密钥（.secrets.json，不进 git）----
 SECRETS = {}
@@ -76,10 +79,23 @@ def _ssh_cmd(node):
                 "-o", "ConnectTimeout=10", "-p", str(node["port"]), remote, script]
     raise RuntimeError(f"节点 {node['host']} 没有配置 key 或 password")
 
+def load_template(tid):
+    """按模板 id 加载对应内容: 2/3=clash, 4=stash。"""
+    if tid == 4:
+        path = STASH_TEMPLATE_FILE
+        if not os.path.isfile(path):
+            print(f"ERROR: stash 模板不存在: {path}")
+            return None
+        with open(path, encoding="utf-8") as f:
+            return f.read()
+    path = TEMPLATE_FILE
+    if not os.path.isfile(path):
+        print(f"ERROR: clash 模板不存在: {path}")
+        return None
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
 def main():
-    if not os.path.isfile(TEMPLATE_FILE):
-        print(f"ERROR: 模板文件不存在: {TEMPLATE_FILE}")
-        sys.exit(1)
     if not DB["host"]:
         print("ERROR: 缺少数据库主机（.secrets.json 未配置 db_host 或 DB_HOST 环境变量）")
         sys.exit(1)
@@ -87,15 +103,8 @@ def main():
         print("ERROR: 缺少数据库密码（.secrets.json 未配置 db_pass 或 DB_PASS 环境变量）")
         sys.exit(1)
 
-    with open(TEMPLATE_FILE, encoding="utf-8") as f:
-        content = f.read()
-    if not content.strip():
-        print("ERROR: 模板内容为空")
-        sys.exit(1)
-
     print("=== 开始同步 xboard 订阅模板 ===")
     print(f"DB: {DB['host']}:{DB['port']}/{DB['database']} ({DB['user']})")
-    print(f"模板: {TEMPLATE_FILE} ({len(content.splitlines())} 行, {len(content)} 字符)")
 
     try:
         conn = pymysql.connect(**DB, autocommit=False)
@@ -113,6 +122,10 @@ def main():
                     print(f"  [id={tid}] 不存在，跳过")
                     continue
                 name = row[0]
+                content = load_template(tid)
+                if content is None or not content.strip():
+                    print(f"  [id={tid}] {name}: 模板为空，跳过")
+                    continue
                 cur.execute(
                     "UPDATE v2_subscribe_templates SET content=%s, updated_at=NOW() WHERE id=%s",
                     (content, tid))
