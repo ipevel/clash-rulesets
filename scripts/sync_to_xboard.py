@@ -77,7 +77,9 @@ def _ssh_cmd(node):
     if node.get("key"):
         return ["ssh", "-i", node["key"], "-o", "StrictHostKeyChecking=no",
                 "-o", "ConnectTimeout=10", "-p", str(node["port"]), remote, script]
-    raise RuntimeError(f"节点 {node['host']} 没有配置 key 或 password")
+    # 无 key/password: 用默认 SSH 配置 (root 免密 / ~/.ssh/config)
+    return ["ssh", "-o", "StrictHostKeyChecking=no",
+            "-o", "ConnectTimeout=10", "-p", str(node["port"]), remote, script]
 
 def load_template(tid):
     """按模板 id 加载对应内容: 2/3=clash, 4=stash。"""
