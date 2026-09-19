@@ -1,4 +1,4 @@
-# Google - 687 rules
+# Google - 694 rules
 payload:
   - DOMAIN,voice.telephony.goog,Proxy
   - DOMAIN-SUFFIX,0emm.com,Proxy
@@ -212,6 +212,7 @@ payload:
   - DOMAIN-SUFFIX,froogle.com,Proxy
   - DOMAIN-SUFFIX,fuchsia.dev,Proxy
   - DOMAIN-SUFFIX,g-tun.com,Proxy
+  - DOMAIN-SUFFIX,g.cn,Proxy
   - DOMAIN-SUFFIX,g.co,Proxy
   - DOMAIN-SUFFIX,g.dev,Proxy
   - DOMAIN-SUFFIX,g.page,Proxy
@@ -228,6 +229,7 @@ payload:
   - DOMAIN-SUFFIX,getoutline.org,Proxy
   - DOMAIN-SUFFIX,ggoogle.com,Proxy
   - DOMAIN-SUFFIX,gipscorp.com,Proxy
+  - DOMAIN-SUFFIX,gkecnapps.cn,Proxy
   - DOMAIN-SUFFIX,globaledu.org,Proxy
   - DOMAIN-SUFFIX,gmail.com,Proxy
   - DOMAIN-SUFFIX,gmodules.com,Proxy
@@ -276,6 +278,7 @@ payload:
   - DOMAIN-SUFFIX,google.ci,Proxy
   - DOMAIN-SUFFIX,google.cl,Proxy
   - DOMAIN-SUFFIX,google.cm,Proxy
+  - DOMAIN-SUFFIX,google.cn,Proxy
   - DOMAIN-SUFFIX,google.co.ao,Proxy
   - DOMAIN-SUFFIX,google.co.bw,Proxy
   - DOMAIN-SUFFIX,google.co.ck,Proxy
@@ -450,6 +453,7 @@ payload:
   - DOMAIN-SUFFIX,googleadservices.com,Proxy
   - DOMAIN-SUFFIX,googleanalytics.com,Proxy
   - DOMAIN-SUFFIX,googleapis-cn.com,Proxy
+  - DOMAIN-SUFFIX,googleapis.cn,Proxy
   - DOMAIN-SUFFIX,googleapis.com,Proxy
   - DOMAIN-SUFFIX,googleapps-cn.com,Proxy
   - DOMAIN-SUFFIX,googleapps.com,Proxy
@@ -458,6 +462,7 @@ payload:
   - DOMAIN-SUFFIX,googlebot.com,Proxy
   - DOMAIN-SUFFIX,googlecapital.com,Proxy
   - DOMAIN-SUFFIX,googlecert.net,Proxy
+  - DOMAIN-SUFFIX,googlecnapps.cn,Proxy
   - DOMAIN-SUFFIX,googlecode.com,Proxy
   - DOMAIN-SUFFIX,googlecommerce.com,Proxy
   - DOMAIN-SUFFIX,googlecompare.co.uk,Proxy
@@ -497,7 +502,9 @@ payload:
   - DOMAIN-SUFFIX,gridaware.app,Proxy
   - DOMAIN-SUFFIX,gsrc.io,Proxy
   - DOMAIN-SUFFIX,gstatic-cn.com,Proxy
+  - DOMAIN-SUFFIX,gstatic.cn,Proxy
   - DOMAIN-SUFFIX,gstatic.com,Proxy
+  - DOMAIN-SUFFIX,gstaticcnapps.cn,Proxy
   - DOMAIN-SUFFIX,gsuite.com,Proxy
   - DOMAIN-SUFFIX,gv.com,Proxy
   - DOMAIN-SUFFIX,gvt0.com,Proxy
