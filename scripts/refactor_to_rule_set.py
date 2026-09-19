@@ -221,7 +221,7 @@ def process(config_path, target_sections):
             new_lines.append(f"  {key}:\n")
             new_lines.append(f"    type: http\n")
             new_lines.append(f"    behavior: {behavior}\n")
-            new_lines.append(f"    url: \"https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/{name}.yaml\"\n")
+            new_lines.append(f"    url: \"https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/{name}.yaml\"\n")
             new_lines.append(f"    path: \"./ruleset/{key}.yaml\"\n")
             new_lines.append(f"    interval: 86400\n")
 

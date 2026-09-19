@@ -83,8 +83,8 @@ proxies:
 
 proxy-groups:
   - { name: "$app_name", type: select, proxies: ["自动选择", "故障转移", "DIRECT"] }
-  - { name: "自动选择", type: url-test, proxies: [], url: "http://www.gstatic.com/generate_204", interval: 300, tolerance: 50 }
-  - { name: "故障转移", type: fallback, proxies: [], url: "http://www.gstatic.com/generate_204", interval: 300 }
+  - { name: "自动选择", type: url-test, proxies: ["DIRECT"], url: "http://www.gstatic.com/generate_204", interval: 300, tolerance: 50 }
+  - { name: "故障转移", type: fallback, proxies: ["DIRECT"], url: "http://www.gstatic.com/generate_204", interval: 300 }
 
 # ============================================================
 # Clash Full Ruleset (generated from clash-rulesets)
@@ -93,15 +93,17 @@ proxy-groups:
 
 rules:
 
-- RULE-SET,apple,Proxy
+- RULE-SET,apple,$app_name
 - RULE-SET,banad,REJECT
 - RULE-SET,banadcompany,REJECT
 - RULE-SET,baneasylist,REJECT
 - RULE-SET,baneasylistchina,REJECT
 - RULE-SET,baneasyprivacy,REJECT
 - RULE-SET,banprogramad,REJECT
-- RULE-SET,bing,Proxy
+- RULE-SET,bing,$app_name
 - RULE-SET,chinacompanyip,DIRECT
+- RULE-SET,microsoft,$app_name
+- RULE-SET,onedrive,$app_name
 - RULE-SET,chinadomain,DIRECT
 - RULE-SET,chinaip,DIRECT
 - RULE-SET,chinaipv6,DIRECT
@@ -176,13 +178,11 @@ rules:
 - IP-CIDR,fc00::/7,DIRECT,no-resolve
 - IP-CIDR,fe80::/10,DIRECT,no-resolve
 - IP-CIDR,fd00::/8,DIRECT,no-resolve
-- RULE-SET,microsoft,Proxy
-- RULE-SET,netflix,Proxy
-- RULE-SET,onedrive,Proxy
-- RULE-SET,proxygfwlist,Proxy
-- RULE-SET,proxylite,Proxy
-- RULE-SET,proxymedia,Proxy
-- RULE-SET,telegram,Proxy
+- RULE-SET,netflix,$app_name
+- RULE-SET,proxygfwlist,$app_name
+- RULE-SET,proxylite,$app_name
+- RULE-SET,proxymedia,$app_name
+- RULE-SET,telegram,$app_name
   # === UnBan (31 rules) ===
 - DOMAIN-SUFFIX,ol.epicgames.com,DIRECT
 - DOMAIN-SUFFIX,dizhensubao.getui.com,DIRECT
@@ -203,7 +203,6 @@ rules:
 - DOMAIN-SUFFIX,FamilyDS.com,DIRECT
 - DOMAIN-SUFFIX,FamilyDS.net,DIRECT
 - DOMAIN-SUFFIX,FamilyDS.org,DIRECT
-- DOMAIN,dl.google.com,DIRECT
 - DOMAIN,origin-a.akamaihd.net,DIRECT
 - DOMAIN,fairplay.l.qq.com,DIRECT
 - DOMAIN,livew.l.qq.com,DIRECT
@@ -240,114 +239,114 @@ rule-providers:
   apple:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Apple.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Apple.yaml"
     path: "./ruleset/apple.yaml"
     interval: 86400
   banad:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanAD.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanAD.yaml"
     path: "./ruleset/banad.yaml"
     interval: 86400
   banadcompany:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanADCompany.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanADCompany.yaml"
     path: "./ruleset/banadcompany.yaml"
     interval: 86400
   baneasylist:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyList.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyList.yaml"
     path: "./ruleset/baneasylist.yaml"
     interval: 86400
   baneasylistchina:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyListChina.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyListChina.yaml"
     path: "./ruleset/baneasylistchina.yaml"
     interval: 86400
   baneasyprivacy:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyPrivacy.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyPrivacy.yaml"
     path: "./ruleset/baneasyprivacy.yaml"
     interval: 86400
   banprogramad:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanProgramAD.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanProgramAD.yaml"
     path: "./ruleset/banprogramad.yaml"
     interval: 86400
   bing:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Bing.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Bing.yaml"
     path: "./ruleset/bing.yaml"
     interval: 86400
   chinacompanyip:
     type: http
     behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaCompanyIp.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaCompanyIp.yaml"
     path: "./ruleset/chinacompanyip.yaml"
     interval: 86400
   chinadomain:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaDomain.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaDomain.yaml"
     path: "./ruleset/chinadomain.yaml"
     interval: 86400
   chinaip:
     type: http
     behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIp.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIp.yaml"
     path: "./ruleset/chinaip.yaml"
     interval: 86400
   chinaipv6:
     type: http
     behavior: ipcidr
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIpV6.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIpV6.yaml"
     path: "./ruleset/chinaipv6.yaml"
     interval: 86400
   microsoft:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Microsoft.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Microsoft.yaml"
     path: "./ruleset/microsoft.yaml"
     interval: 86400
   netflix:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Netflix.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Netflix.yaml"
     path: "./ruleset/netflix.yaml"
     interval: 86400
   onedrive:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/OneDrive.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/OneDrive.yaml"
     path: "./ruleset/onedrive.yaml"
     interval: 86400
   proxygfwlist:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyGFWlist.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyGFWlist.yaml"
     path: "./ruleset/proxygfwlist.yaml"
     interval: 86400
   proxylite:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyLite.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyLite.yaml"
     path: "./ruleset/proxylite.yaml"
     interval: 86400
   proxymedia:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyMedia.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyMedia.yaml"
     path: "./ruleset/proxymedia.yaml"
     interval: 86400
   telegram:
     type: http
     behavior: domain
-    url: "https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Telegram.yaml"
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Telegram.yaml"
     path: "./ruleset/telegram.yaml"
     interval: 86400

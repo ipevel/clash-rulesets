@@ -113,7 +113,7 @@ def filter_cn_proxy(rules):
     """Proxy 策略的规则剔除 .cn 域名（防止国内服务误走代理）。"""
     out = []
     for r in rules:
-        if ".cn" in r.lower() and (r.startswith("DOMAIN-SUFFIX,") or r.startswith("DOMAIN,")):
+        if (r.startswith("DOMAIN-SUFFIX,") or r.startswith("DOMAIN,")) and r.lower().rstrip().endswith(".cn"):
             continue
         out.append(r)
     return out
@@ -225,6 +225,8 @@ def main():
 
     print("\n".join(results))
     print(f"TOTAL: {total} rules across {len(SOURCES)+1} providers")
+    if any(r.startswith("FAIL") for r in results):
+        sys.exit(1)
 
     if update_tpl:
         try:

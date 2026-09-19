@@ -56,9 +56,8 @@ DB = dict(
     charset="utf8mb4",
 )
 
-TEMPLATE_IDS = [int(x) for x in os.environ.get(
-    "TEMPLATE_IDS", "2,3,4").split(",")]  # 2=clash, 3=clashmeta, 4=stash
-
+TEMPLATE_IDS = [int(x.strip()) for x in os.environ.get(
+    "TEMPLATE_IDS", "2,3,4").split(",") if x.strip()]  # 2=clash, 3=clashmeta, 4=stash
 # 需要清 Redis 缓存的面板节点 (host, port, 认证方式)
 # 注意: Xboard 的 SubscribeTemplate::getContent() 用 Redis remember(3600) 缓存模板 1 小时，
 # 直接改库必须清缓存才能立即生效（缓存键在 db1: xboard_database_xboard_cachesubscribe_template:*）
@@ -69,8 +68,9 @@ NODES = SECRETS.get("nodes", [])
 def _ssh_cmd(node):
     """构造 SSH 清缓存命令。"""
     remote = f"root@{node['host']}"
-    script = ("for db in 0 1; do docker exec xboard-redis-1 redis-cli -n $db --scan 2>/dev/null "
-              "| grep -i template | while read k; do docker exec xboard-redis-1 redis-cli -n $db DEL \"$k\"; done; done")
+    redis_container = os.environ.get("REDIS_CONTAINER", "xboard-redis-1")
+    script = (f"for db in 0 1; do docker exec {redis_container} redis-cli -n $db --scan 2>/dev/null "
+              f"| grep -i template | while read k; do docker exec {redis_container} redis-cli -n $db DEL \\\"$k\\\"; done; done")
     if node.get("password"):
         return ["sshpass", "-p", node["password"], "ssh", "-o", "StrictHostKeyChecking=no",
                 "-o", "ConnectTimeout=10", "-p", str(node["port"]), remote, script]

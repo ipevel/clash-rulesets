@@ -27,6 +27,18 @@ git pull --ff-only origin main 2>&1 | tee -a "$LOG_FILE" || log "WARN: git pull 
 log "生成 providers..."
 python3 scripts/generate_providers.py --update-template 2>&1 | tail -5 | tee -a "$LOG_FILE"
 
+# 2b. 重构为 RULE-SET（与 CI 一致，避免 generate 覆盖 CI 的 refactor 输出）
+log "重构 RULE-SET..."
+python3 scripts/refactor_to_rule_set.py 2>&1 | tail -5 | tee -a "$LOG_FILE"
+
+# 2c. 拉取 stash-rulesets（stash 模板来源，避免过期）
+log "拉取 stash-rulesets..."
+if [ -d /root/stash-rulesets ]; then
+    git -C /root/stash-rulesets pull --ff-only origin main 2>&1 | tee -a "$LOG_FILE" || log "WARN: stash-rulesets pull 失败"
+else
+    log "WARN: /root/stash-rulesets 不存在，跳过 stash 拉取"
+fi
+
 # 3. 若有本地生成改动则提交
 if ! git diff --quiet; then
     log "检测到本地改动，commit & push..."
