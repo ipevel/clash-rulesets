@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-校验：模板里每个 rule-provider 的 behavior，是否与它指向的文件 payload 格式匹配。
-不匹配 = 这份远程规则在内核里零命中。
+校验（改规则前后都要跑）：
+1) 模板里每个 rule-provider 的 behavior，是否与它指向的文件 payload 格式匹配。
+   不匹配 = 这份远程规则在内核里零命中。
+2) 策略组成员名引用是否存在只差 emoji 前缀的错配（如 '全球直连' vs '🎯 全球直连'），
+   这类错配会让 mihomo 顺延到下一个真实节点，表面上"改了却没生效"
 用法: python3 scripts/verify_providers.py [profile.yaml ...]
 """
 import os, re, sys
@@ -126,6 +129,59 @@ def check(label, txt):
     return ok
 
 
+def check_group_refs(txt, label):
+    """策略组成员名引用检查。
+
+    2026-09-20 踩坑：把 select 组成员写成 '全球直连'，而真实组名是 '🎯 全球直连'。
+    mihomo 找不到该组，会顺延到列表里下一个真实节点 —— 结果"改了默认出站却毫无效果"，
+    排查了一整轮才定位。此处专门抓这类只差 emoji 前缀的错配。
+    """
+    def strip_prefix(s):
+        return re.sub(r"^[\U0001F000-\U0001FAFF\uFE0F\u200D\s]+", "", s).strip()
+
+    lines = txt.splitlines()
+    groups, members_of = [], {}
+    cur = None
+    in_blk = False
+    for ln in lines:
+        if ln.startswith("proxy-groups:"):
+            in_blk = True
+            continue
+        if in_blk and ln and not ln.startswith(" ") and not ln.startswith("#"):
+            break
+        m = re.match(r"^  - name:\s*(.+)$", ln)
+        if m and in_blk:
+            cur = m.group(1).strip().strip("'\"")
+            groups.append(cur)
+            members_of[cur] = []
+            continue
+        mm = re.match(r"^      - (.+)$", ln)
+        if mm and cur:
+            members_of[cur].append(mm.group(1).strip().strip("'\""))
+
+    BUILTIN = {"DIRECT", "REJECT", "GLOBAL", "PASS"}
+    gset = set(groups)
+    print("  [%s] 分组数 %d" % (label, len(groups)))
+    wrong = []
+    for g in groups:
+        for mem in members_of[g]:
+            if mem in gset or mem in BUILTIN:
+                continue
+            core = strip_prefix(mem)
+            near = [x for x in gset if strip_prefix(x) == core]
+            if near:
+                wrong.append((g, mem, near[0]))
+    if wrong:
+        print("  !! 成员名与组名只差 emoji 前缀（引用必失败）:")
+        for g, mem, real in wrong:
+            print("     [%s] 引用「%s」，实际组名是「%s」" % (g, mem, real))
+    else:
+        print("  OK  %s 无 emoji 前缀错配" % label)
+    if not groups:
+        print("     (未解析到 proxy-groups 段，跳过)")
+    return not wrong
+
+
 if __name__ == "__main__":
     targets = sys.argv[1:]
     if not targets:
@@ -136,7 +192,9 @@ if __name__ == "__main__":
         if not os.path.isfile(t):
             print("skip (不存在):", t)
             continue
-        all_ok &= check(os.path.basename(t), open(t, encoding="utf-8").read())
+        raw = open(t, encoding="utf-8").read()
+        all_ok &= check(os.path.basename(t), raw)
+        all_ok &= check_group_refs(raw, os.path.basename(t))
     print("=" * 78)
     print("总结果:", "全部通过 ✓" if all_ok else "有问题 ✗")
     sys.exit(0 if all_ok else 1)
