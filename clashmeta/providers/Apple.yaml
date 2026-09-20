@@ -1,12 +1,12 @@
 # Apple - 33 rules
 payload:
-  - DOMAIN-KEYWORD,apple-support.akadns.net,Proxy
-  - DOMAIN-KEYWORD,apple.com.akadns.net,Proxy
-  - DOMAIN-KEYWORD,apple.com.edgekey.net,Proxy
-  - DOMAIN-KEYWORD,buy.itunes.apple.com,Proxy
-  - DOMAIN-KEYWORD,smp-device,Proxy
-  - DOMAIN-KEYWORD,testflight,Proxy
-  - DOMAIN-KEYWORD,icloud.com.akadns.net,Proxy
+  - DOMAIN-KEYWORD,apple-support.akadns.net
+  - DOMAIN-KEYWORD,apple.com.akadns.net
+  - DOMAIN-KEYWORD,apple.com.edgekey.net
+  - DOMAIN-KEYWORD,buy.itunes.apple.com
+  - DOMAIN-KEYWORD,smp-device
+  - DOMAIN-KEYWORD,testflight
+  - DOMAIN-KEYWORD,icloud.com.akadns.net
   - IP-CIDR,139.178.128.0/18,Proxy,no-resolve
   - IP-CIDR,144.178.0.0/19,Proxy,no-resolve
   - IP-CIDR,144.178.36.0/22,Proxy,no-resolve

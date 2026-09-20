@@ -1,4 +1,4 @@
 # GooglePlay - 2 rules
 payload:
-  - DOMAIN-SUFFIX,googleplay.com,Proxy
+  - DOMAIN-SUFFIX,googleplay.com
   - PROCESS-NAME,com.google.android.play.games

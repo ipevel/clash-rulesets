@@ -94,12 +94,6 @@ proxy-groups:
 rules:
 
 - RULE-SET,apple,$app_name
-- RULE-SET,banad,REJECT
-- RULE-SET,banadcompany,REJECT
-- RULE-SET,baneasylist,REJECT
-- RULE-SET,baneasylistchina,REJECT
-- RULE-SET,baneasyprivacy,REJECT
-- RULE-SET,banprogramad,REJECT
 - RULE-SET,bing,$app_name
 - RULE-SET,chinacompanyip,DIRECT
 - RULE-SET,microsoft,$app_name
@@ -238,49 +232,13 @@ rules:
 rule-providers:
   apple:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Apple.yaml"
     path: "./ruleset/apple.yaml"
     interval: 86400
-  banad:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanAD.yaml"
-    path: "./ruleset/banad.yaml"
-    interval: 86400
-  banadcompany:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanADCompany.yaml"
-    path: "./ruleset/banadcompany.yaml"
-    interval: 86400
-  baneasylist:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyList.yaml"
-    path: "./ruleset/baneasylist.yaml"
-    interval: 86400
-  baneasylistchina:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyListChina.yaml"
-    path: "./ruleset/baneasylistchina.yaml"
-    interval: 86400
-  baneasyprivacy:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanEasyPrivacy.yaml"
-    path: "./ruleset/baneasyprivacy.yaml"
-    interval: 86400
-  banprogramad:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/BanProgramAD.yaml"
-    path: "./ruleset/banprogramad.yaml"
-    interval: 86400
   bing:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Bing.yaml"
     path: "./ruleset/bing.yaml"
     interval: 86400
@@ -292,7 +250,7 @@ rule-providers:
     interval: 86400
   chinadomain:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaDomain.yaml"
     path: "./ruleset/chinadomain.yaml"
     interval: 86400
@@ -310,25 +268,25 @@ rule-providers:
     interval: 86400
   microsoft:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Microsoft.yaml"
     path: "./ruleset/microsoft.yaml"
     interval: 86400
   netflix:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Netflix.yaml"
     path: "./ruleset/netflix.yaml"
     interval: 86400
   onedrive:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/OneDrive.yaml"
     path: "./ruleset/onedrive.yaml"
     interval: 86400
   proxygfwlist:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyGFWlist.yaml"
     path: "./ruleset/proxygfwlist.yaml"
     interval: 86400
@@ -340,13 +298,13 @@ rule-providers:
     interval: 86400
   proxymedia:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyMedia.yaml"
     path: "./ruleset/proxymedia.yaml"
     interval: 86400
   telegram:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Telegram.yaml"
     path: "./ruleset/telegram.yaml"
     interval: 86400

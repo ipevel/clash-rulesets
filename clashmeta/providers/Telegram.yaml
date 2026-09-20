@@ -1,30 +1,30 @@
 # Telegram - 46 rules
 payload:
-  - DOMAIN,api.imem.app,Proxy
-  - DOMAIN,api.swiftgram.app,Proxy
-  - DOMAIN-SUFFIX,cdn-telegram.org,Proxy
-  - DOMAIN-SUFFIX,comments.app,Proxy
-  - DOMAIN-SUFFIX,contest.com,Proxy
-  - DOMAIN-SUFFIX,graph.org,Proxy
-  - DOMAIN-SUFFIX,legra.ph,Proxy
-  - DOMAIN-SUFFIX,mbrx.app,Proxy
-  - DOMAIN-SUFFIX,quiz.directory,Proxy
-  - DOMAIN-SUFFIX,stel.com,Proxy
-  - DOMAIN-SUFFIX,t.me,Proxy
-  - DOMAIN-SUFFIX,tdesktop.com,Proxy
-  - DOMAIN-SUFFIX,telega.one,Proxy
-  - DOMAIN-SUFFIX,telegra.ph,Proxy
-  - DOMAIN-SUFFIX,telegram-cdn.org,Proxy
-  - DOMAIN-SUFFIX,telegram.dog,Proxy
-  - DOMAIN-SUFFIX,telegram.me,Proxy
-  - DOMAIN-SUFFIX,telegram.org,Proxy
-  - DOMAIN-SUFFIX,telegram.space,Proxy
-  - DOMAIN-SUFFIX,telegramdownload.com,Proxy
-  - DOMAIN-SUFFIX,telesco.pe,Proxy
-  - DOMAIN-SUFFIX,tg.dev,Proxy
-  - DOMAIN-SUFFIX,tx.me,Proxy
-  - DOMAIN-SUFFIX,usercontent.dev,Proxy
-  - DOMAIN-KEYWORD,nicegram,Proxy
+  - DOMAIN,api.imem.app
+  - DOMAIN,api.swiftgram.app
+  - DOMAIN-SUFFIX,cdn-telegram.org
+  - DOMAIN-SUFFIX,comments.app
+  - DOMAIN-SUFFIX,contest.com
+  - DOMAIN-SUFFIX,graph.org
+  - DOMAIN-SUFFIX,legra.ph
+  - DOMAIN-SUFFIX,mbrx.app
+  - DOMAIN-SUFFIX,quiz.directory
+  - DOMAIN-SUFFIX,stel.com
+  - DOMAIN-SUFFIX,t.me
+  - DOMAIN-SUFFIX,tdesktop.com
+  - DOMAIN-SUFFIX,telega.one
+  - DOMAIN-SUFFIX,telegra.ph
+  - DOMAIN-SUFFIX,telegram-cdn.org
+  - DOMAIN-SUFFIX,telegram.dog
+  - DOMAIN-SUFFIX,telegram.me
+  - DOMAIN-SUFFIX,telegram.org
+  - DOMAIN-SUFFIX,telegram.space
+  - DOMAIN-SUFFIX,telegramdownload.com
+  - DOMAIN-SUFFIX,telesco.pe
+  - DOMAIN-SUFFIX,tg.dev
+  - DOMAIN-SUFFIX,tx.me
+  - DOMAIN-SUFFIX,usercontent.dev
+  - DOMAIN-KEYWORD,nicegram
   - IP-CIDR,109.239.140.0/24,Proxy,no-resolve
   - IP-CIDR,139.59.210.98/32,Proxy,no-resolve
   - IP-CIDR,149.154.160.0/20,Proxy,no-resolve
@@ -41,8 +41,8 @@ payload:
   - PROCESS-NAME,telegram-desktop
   - PROCESS-NAME,tw.nekomimi.nekogram
   - PROCESS-NAME,xyz.nextalone.nagram
-  - IP-ASN,211157,Proxy
-  - IP-ASN,44907,Proxy
-  - IP-ASN,59930,Proxy
-  - IP-ASN,62014,Proxy
-  - IP-ASN,62041,Proxy
+  - IP-ASN,211157
+  - IP-ASN,44907
+  - IP-ASN,59930
+  - IP-ASN,62014
+  - IP-ASN,62041

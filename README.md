@@ -31,20 +31,27 @@ https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Go
 
 ## 规则集清单
 
-| Provider | 类型 | 策略 | 说明 |
-|---|---|---|---|
-| BanAD / BanADCompany | domain | REJECT | 广告拦截 |
-| BanEasyList / BanEasyListChina / BanEasyPrivacy / BanProgramAD | domain | REJECT | 广告增强 |
-| OpenAI / Claude / GoogleGemini | domain | Proxy | AI 平台 |
-| ProxyMedia / TikTok / Instagram / Netflix | domain+ipcidr | Proxy | 流媒体 |
-| Google / GooglePlay / GoogleFCM | domain+ipcidr | Proxy | Google |
-| Apple | domain+ipcidr | Proxy | Apple |
-| GitHub | domain | Proxy | GitHub |
-| Bing / OneDrive / Microsoft | domain | Proxy | 微软 |
-| ChinaDomain | domain | DIRECT | 国内域名 |
-| ChinaIp / ChinaIpV6 / ChinaCompanyIp | ipcidr | DIRECT | 国内 IP |
-| Telegram / TelegramCIDR | domain+ipcidr | Proxy | Telegram |
-| ProxyGFWlist / ProxyLite / ProxyMedia | domain+ipcidr | Proxy | GFW 列表 |
+> provider 的 `behavior` 必须与 payload 格式对应，写错会导致**整份远程规则零命中**：
+> - `classical` → payload 是规则行且**不带策略**：`- DOMAIN-SUFFIX,example.com`
+> - `domain` → payload 是裸域名（仅 ProxyLite.yaml 用它）
+> - `ipcidr` → payload 是裸网段（ChinaIp / ChinaIpV6 / ChinaCompanyIp / TelegramCIDR）
+>
+> 策略一律由配置里的 `RULE-SET,<name>,<策略组>` 指定，payload 里不要写 `,Proxy` / `,DIRECT` / `,REJECT`。
+
+| Provider | behavior | 说明 |
+|---|---|---|
+| OpenAI / Claude / GoogleGemini | classical | AI 平台 |
+| ProxyMedia / TikTok / Instagram / Netflix | classical | 流媒体 |
+| Google / GooglePlay / GoogleFCM | classical | Google |
+| Apple | classical | Apple |
+| GitHub | classical | GitHub |
+| Bing / OneDrive / Microsoft | classical | 微软 |
+| ChinaDomain | classical | 国内域名（已剔除误标的微软条目） |
+| ChinaIp / ChinaIpV6 / ChinaCompanyIp | ipcidr | 国内 IP |
+| Telegram / TelegramCIDR | classical + ipcidr | Telegram |
+| ProxyGFWlist / ProxyLite / ProxyMedia | classical / domain | GFW 列表 |
+
+广告拦截规则集已于 2026-09-20 移除，不再提供任何 REJECT 类 provider。
 
 ## 生成与同步
 

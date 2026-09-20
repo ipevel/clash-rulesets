@@ -81,33 +81,80 @@ def classify(item):
     return "skip"
 
 def to_rule(item, policy, kind=None):
-    """把条目转成带策略的 Clash 规则行。"""
+    """
+    把条目转成 rule-provider 用的规则行。
+
+    重要: 本仓库 domain 类 provider 的 behavior 均为 **classical**，payload 必须是
+    规则行且**不带策略字段**（如 'DOMAIN-SUFFIX,example.com'）；策略由配置里的
+    'RULE-SET,<name>,<策略组>' 决定。
+
+    历史上这里会追加 ',Proxy' / ',REJECT'，导致 behavior:domain 下整行被当成域名
+    插入 trie，所有远程规则集零命中（微软/Google/GFWlist 分流全部失效）。已修正。
+    """
     kind = kind or classify(item)
     if kind == "rule":
         parts = [p.strip() for p in item.split(",")]
         rtype = parts[0].upper()
-        if rtype == "PROCESS-NAME":
-            return item  # 原样
-        if len(parts) >= 3 and parts[-1] in ("Proxy", "DIRECT", "REJECT", "no-resolve", "NO-DIRECT"):
-            if parts[-1] == "no-resolve" and len(parts) >= 4:
-                return item  # 已带完整策略
-            return item
         if rtype in ("IP-CIDR", "IP-CIDR6", "IP-ASN"):
-            return f"{item},{policy},no-resolve" if rtype != "IP-ASN" else f"{item},{policy}"
-        return f"{item},{policy}"
+            return item  # ipcidr 走 cidr 分支输出裸网段，规则行形式原样保留
+        # 剥离历史遗留的策略字段
+        if len(parts) >= 3 and parts[-1] in ("Proxy", "DIRECT", "REJECT", "NO-DIRECT"):
+            return ",".join(parts[:-1])
+        return item
     if kind == "bare":
         # 裸域名 -> DOMAIN（精确匹配）
-        return f"DOMAIN,{item},{policy}"
+        return f"DOMAIN,{item}"
     if kind == "adguard":
         # +.domain -> DOMAIN-SUFFIX
         dom = item.lstrip("+.'\"").strip()
-        return f"DOMAIN-SUFFIX,{dom},{policy}"
+        return f"DOMAIN-SUFFIX,{dom}"
     if kind == "cidr":
         # 纯 IP 段输出（供 behavior: ipcidr 的 rule-provider 使用，不带规则前缀/策略）
         if "/" in item:
             return item
         return f"{item}/32"
     return None
+
+# blackmatrix7 的 China_Domain 把一批微软域名标成「国内直连」，实际在国内访问不通，
+# 会直接搞挂 Outlook / Office365 / Microsoft Store / Windows Update / Xbox。
+# 这些域名应由 Microsoft.yaml / OneDrive.yaml（走代理）接管。
+MS_DIRECT_DROP_DOMAIN = {
+    "DOMAIN,download.microsoft.com",
+    "DOMAIN,ntservicepack.microsoft.com",
+}
+MS_DIRECT_DROP_SUFFIX = {
+    "dl.delivery.mp.microsoft.com",
+    "hotmail.com",
+    "microsoftonline.com",
+    "office.com",
+    "office.net",
+    "office365.com",
+    "outlook.com",
+    "s-microsoft.com",
+    "sharepoint.com",
+    "update.microsoft.com",
+    "windows.com",
+    "windows.net",
+    "windowsupdate.com",
+    "windowsupdate.microsoft.com",
+    "xbox.com",
+    "xboxlive.com",
+}
+
+
+def drop_microsoft_direct(rules):
+    """从国内直连列表里剔除微软条目（精确值匹配，不误伤 chinalive.com 等）。"""
+    out = []
+    for r in rules:
+        parts = [p.strip() for p in r.split(",")]
+        if len(parts) >= 2:
+            if r in MS_DIRECT_DROP_DOMAIN:
+                continue
+            if parts[0].upper() == "DOMAIN-SUFFIX" and parts[1] in MS_DIRECT_DROP_SUFFIX:
+                continue
+        out.append(r)
+    return out
+
 
 def filter_cn_proxy(rules):
     """Proxy 策略的规则剔除 .cn 域名（防止国内服务误走代理）。"""
@@ -139,9 +186,6 @@ def write_provider(fname, rules, header_note=""):
 
 # (源URL, 目标文件, 策略, 格式类型, 是否滤.cn)
 SOURCES = [
-    # --- 广告（blackmatrix7 AdvertisingLite，量级可控）---
-    (BM7.format(cat="AdvertisingLite", file="AdvertisingLite_Domain.yaml"), "BanAD.yaml",       "REJECT", "auto", False),
-    (BM7.format(cat="AdvertisingLite", file="AdvertisingLite.yaml"),       "BanADCompany.yaml", "REJECT", "rule",  False),
     # --- AI ---
     (BM7.format(cat="OpenAI", file="OpenAI.yaml"), "OpenAI.yaml",       "Proxy", "rule", True),
     (BM7.format(cat="Claude", file="Claude.yaml"), "Claude.yaml",       "Proxy", "rule", True),
@@ -190,6 +234,8 @@ def main():
                     rules.append(r)
             if filter_cn:
                 rules = filter_cn_proxy(rules)
+            if out == "ChinaDomain.yaml":
+                rules = drop_microsoft_direct(rules)
             rules = dedup(rules)
             if not rules:
                 raise RuntimeError("empty rules")

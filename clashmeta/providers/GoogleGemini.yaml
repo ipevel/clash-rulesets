@@ -1,15 +1,15 @@
 # GoogleGemini - 13 rules
 payload:
-  - DOMAIN,ai.google.dev,Proxy
-  - DOMAIN,alkalimakersuite-pa.clients6.google.com,Proxy
-  - DOMAIN,makersuite.google.com,Proxy
-  - DOMAIN-SUFFIX,bard.google.com,Proxy
-  - DOMAIN-SUFFIX,deepmind.com,Proxy
-  - DOMAIN-SUFFIX,deepmind.google,Proxy
-  - DOMAIN-SUFFIX,gemini.google.com,Proxy
-  - DOMAIN-SUFFIX,generativeai.google,Proxy
-  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com,Proxy
-  - DOMAIN-SUFFIX,apis.google.com,Proxy
-  - DOMAIN-KEYWORD,colab,Proxy
-  - DOMAIN-KEYWORD,developerprofiles,Proxy
-  - DOMAIN-KEYWORD,generativelanguage,Proxy
+  - DOMAIN,ai.google.dev
+  - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  - DOMAIN,makersuite.google.com
+  - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,deepmind.com
+  - DOMAIN-SUFFIX,deepmind.google
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-SUFFIX,generativeai.google
+  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+  - DOMAIN-SUFFIX,apis.google.com
+  - DOMAIN-KEYWORD,colab
+  - DOMAIN-KEYWORD,developerprofiles
+  - DOMAIN-KEYWORD,generativelanguage

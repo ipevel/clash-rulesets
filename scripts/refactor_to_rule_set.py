@@ -32,7 +32,6 @@ POLICY = {
     "Netflix": "Proxy", "TikTok": "Proxy", "Instagram": "Proxy",
     "ProxyGFWlist": "Proxy", "ProxyMedia": "Proxy",
     "ChinaDomain": "DIRECT",
-    "BanAD": "REJECT", "BanADCompany": "REJECT",
     "LocalAreaNetwork": "DIRECT", "LAN": "DIRECT",
     "TelegramIP": "Proxy", "Private": "DIRECT",
 }

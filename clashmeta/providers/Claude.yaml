@@ -1,5 +1,5 @@
 # Claude - 3 rules
 payload:
-  - DOMAIN,cdn.usefathom.com,Proxy
-  - DOMAIN-SUFFIX,anthropic.com,Proxy
-  - DOMAIN-SUFFIX,claude.ai,Proxy
+  - DOMAIN,cdn.usefathom.com
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,claude.ai
