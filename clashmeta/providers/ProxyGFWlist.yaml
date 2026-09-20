@@ -1,4 +1,4 @@
-# ProxyGFWlist - 4384 rules
+# ProxyGFWlist - 4368 rules
 payload:
   - DOMAIN-SUFFIX,000webhost.com
   - DOMAIN-SUFFIX,0rz.tw
@@ -51,7 +51,6 @@ payload:
   - DOMAIN-SUFFIX,611study.com
   - DOMAIN-SUFFIX,611study.icu
   - DOMAIN-SUFFIX,63i.com
-  - DOMAIN-SUFFIX,666pool.cn
   - DOMAIN-SUFFIX,69shuba.cx
   - DOMAIN-SUFFIX,6do.news
   - DOMAIN-SUFFIX,6do.world
@@ -524,7 +523,6 @@ payload:
   - DOMAIN-SUFFIX,blogspot.ug
   - DOMAIN-SUFFIX,blogtd.org
   - DOMAIN-SUFFIX,bloodshed.net
-  - DOMAIN-SUFFIX,bloomberg.cn
   - DOMAIN-SUFFIX,bloomberg.com
   - DOMAIN-SUFFIX,bloomberg.de
   - DOMAIN-SUFFIX,bloombergview.com
@@ -948,7 +946,6 @@ payload:
   - DOMAIN-SUFFIX,daum.net
   - DOMAIN-SUFFIX,david-kilgour.com
   - DOMAIN-SUFFIX,dawangidc.com
-  - DOMAIN-SUFFIX,daxa.cn
   - DOMAIN-SUFFIX,dazn.com
   - DOMAIN-SUFFIX,db.tt
   - DOMAIN-SUFFIX,dbgjd.com
@@ -1365,7 +1362,6 @@ payload:
   - DOMAIN-SUFFIX,furbo.org
   - DOMAIN-SUFFIX,furinkan.com
   - DOMAIN-SUFFIX,furrybar.com
-  - DOMAIN-SUFFIX,futu.cn
   - DOMAIN-SUFFIX,futu.com
   - DOMAIN-SUFFIX,futu.link
   - DOMAIN-SUFFIX,futu0.com
@@ -1379,7 +1375,6 @@ payload:
   - DOMAIN-SUFFIX,futu8.com
   - DOMAIN-SUFFIX,futu9.com
   - DOMAIN-SUFFIX,futuau.com
-  - DOMAIN-SUFFIX,futubull.cn
   - DOMAIN-SUFFIX,futuchain.com
   - DOMAIN-SUFFIX,futuesop.com
   - DOMAIN-SUFFIX,futufin.com
@@ -1558,7 +1553,6 @@ payload:
   - DOMAIN-SUFFIX,google.ci
   - DOMAIN-SUFFIX,google.cl
   - DOMAIN-SUFFIX,google.cm
-  - DOMAIN-SUFFIX,google.cn
   - DOMAIN-SUFFIX,google.co.ao
   - DOMAIN-SUFFIX,google.co.bw
   - DOMAIN-SUFFIX,google.co.ck
@@ -2288,7 +2282,6 @@ payload:
   - DOMAIN-SUFFIX,lifemiles.com
   - DOMAIN-SUFFIX,lighten.org.tw
   - DOMAIN-SUFFIX,lighti.me
-  - DOMAIN-SUFFIX,lightnovel.cn
   - DOMAIN-SUFFIX,lightyearvpn.com
   - DOMAIN-SUFFIX,lih.kg
   - DOMAIN-SUFFIX,lihkg.com
@@ -2334,7 +2327,6 @@ payload:
   - DOMAIN-SUFFIX,longbridge.sg
   - DOMAIN-SUFFIX,longbridgeapp.com
   - DOMAIN-SUFFIX,longbridgehk.com
-  - DOMAIN-SUFFIX,longportapp.cn
   - DOMAIN-SUFFIX,longportapp.com
   - DOMAIN-SUFFIX,longtermly.net
   - DOMAIN-SUFFIX,longtoes.com
@@ -2768,9 +2760,6 @@ payload:
   - DOMAIN-SUFFIX,ooni.org
   - DOMAIN-SUFFIX,open.firstory.me
   - DOMAIN-SUFFIX,openai.com
-  - DOMAIN-SUFFIX,openapi-quote.longbridge.cn
-  - DOMAIN-SUFFIX,openapi-trade.longbridge.cn
-  - DOMAIN-SUFFIX,openapi.longbridge.cn
   - DOMAIN-SUFFIX,openart.ai
   - DOMAIN-SUFFIX,opencritic.com
   - DOMAIN-SUFFIX,opendemocracy.net
@@ -3180,7 +3169,6 @@ payload:
   - DOMAIN-SUFFIX,schema.org
   - DOMAIN-SUFFIX,schwab.co.uk
   - DOMAIN-SUFFIX,schwab.com
-  - DOMAIN-SUFFIX,schwab.com.cn
   - DOMAIN-SUFFIX,schwab.com.hk
   - DOMAIN-SUFFIX,scmp.com
   - DOMAIN-SUFFIX,scramble.io
@@ -3626,7 +3614,6 @@ payload:
   - DOMAIN-SUFFIX,tibettimes.net
   - DOMAIN-SUFFIX,tibettruth.com
   - DOMAIN-SUFFIX,tibetwrites.org
-  - DOMAIN-SUFFIX,tigerbbs.cn
   - DOMAIN-SUFFIX,tigerbbs.com
   - DOMAIN-SUFFIX,tigerbrokers.com
   - DOMAIN-SUFFIX,tigerbrokers.net
@@ -3877,7 +3864,6 @@ payload:
   - DOMAIN-SUFFIX,utopianpal.com
   - DOMAIN-SUFFIX,uujiasu.com
   - DOMAIN-SUFFIX,uukanshu.com
-  - DOMAIN-SUFFIX,uupool.cn
   - DOMAIN-SUFFIX,uvwxyz.xyz
   - DOMAIN-SUFFIX,uwants.com
   - DOMAIN-SUFFIX,uyghur-j.org
@@ -4351,7 +4337,6 @@ payload:
   - DOMAIN-SUFFIX,zhengjian.org
   - DOMAIN-SUFFIX,zhengwunet.org
   - DOMAIN-SUFFIX,zhenxiang.biz
-  - DOMAIN-SUFFIX,zhijianfengyi.cn
   - DOMAIN-SUFFIX,zhijianfengyi.com
   - DOMAIN-SUFFIX,zhizhu.top
   - DOMAIN-SUFFIX,zhongguo.ca
@@ -4364,7 +4349,6 @@ payload:
   - DOMAIN-SUFFIX,zim.vn
   - DOMAIN-SUFFIX,zinio.com
   - DOMAIN-SUFFIX,zmedia.com.tw
-  - DOMAIN-SUFFIX,zmw.cn
   - DOMAIN-SUFFIX,zodgame.xyz
   - DOMAIN-SUFFIX,zonaeuropa.com
   - DOMAIN-SUFFIX,zonghexinwen.com
