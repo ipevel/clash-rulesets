@@ -6,7 +6,7 @@ Clash Meta / Mihomo 分流规则集，兼容 Xboard 等面板。
 
 ```
 clashmeta/
-├── providers/                        # 规则 provider 文件（29个分类）
+├── providers/                        # 规则 provider 文件（23个分类）
 ├── clash-full.clash.yaml            # 完整规则集
 └── clash-xboard-subscription.yaml   # Xboard 订阅模板
 ```
@@ -56,4 +56,4 @@ https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Go
 ## 生成与同步
 
 - 每天 UTC 02:00：GitHub Actions 跑 `generate_providers.py` → `refactor_to_rule_set.py` → commit & push
-- 本机 systemd timer 同步到 xboard 面板（见 `scripts/update_and_sync.sh`）
+- 本机 systemd timer（`clash-rule-sync.timer`）跑 `scripts/update_and_sync.sh` 同步到 xboard 面板（内部调用 `scripts/sync_to_xboard.py` 写入面板数据库）

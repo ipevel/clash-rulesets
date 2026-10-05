@@ -69,6 +69,6 @@ jobs:
             echo "Pushed updates"
           fi
 
-      # 注意: 数据库同步由本机 (OpenClaw 服务器) 的 systemd timer 执行，
+      # 注意: 面板数据库同步由本机 (OpenClaw 服务器) 的 systemd timer (clash-rule-sync.timer) 执行，
       # 因为 GitHub Actions 运行环境无法直连阿里云 RDS（白名单限制）。
-      # 本机脚本: /root/clash-rulesets/scripts/sync_to_xboard.py
+      # 本机入口: scripts/update_and_sync.sh（内部调用 scripts/sync_to_xboard.py 写入面板 DB）
