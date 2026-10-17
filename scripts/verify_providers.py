@@ -11,7 +11,14 @@
 import os, re, sys
 sys.stdout.reconfigure(encoding="utf-8")
 
-BASE = r"E:\AI\Github\clash-rulesets"
+# 仓库根目录：默认按本脚本位置推导（scripts/ 的上一级），
+# 这样在 Linux / CI / 容器里直接 `python3 scripts/verify_providers.py` 就能跑，
+# 不再依赖某台机器上的 Windows 绝对路径。
+# 需要指向别的检出时用环境变量覆盖：CLASH_RULESETS_BASE=/path/to/repo
+BASE = os.environ.get(
+    "CLASH_RULESETS_BASE",
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+)
 PROV = os.path.join(BASE, "clashmeta", "providers")
 
 

@@ -55,5 +55,7 @@ https://fastly.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Go
 
 ## 生成与同步
 
-- 每天 UTC 02:00：GitHub Actions 跑 `generate_providers.py` → `refactor_to_rule_set.py` → commit & push
+- 排期 `cron: 0 2 * * *`（UTC 02:00 = 北京 10:00）：GitHub Actions 跑 `generate_providers.py` → `refactor_to_rule_set.py` → commit & push
+  - 实际触发时刻常有 5–7 小时漂移（近期落在 06:00–09:00 UTC），这是 GitHub Actions 定时任务的排队延迟，不是故障；判定日更是否正常请读 Actions 的 run 记录，别看本地克隆
 - 本机 systemd timer（`clash-rule-sync.timer`）跑 `scripts/update_and_sync.sh` 同步到 xboard 面板（内部调用 `scripts/sync_to_xboard.py` 写入面板数据库）
+- 改规则前后跑校验：`python3 scripts/verify_providers.py`（仓库根目录按脚本位置自动推导，也可用 `CLASH_RULESETS_BASE` 覆盖）
