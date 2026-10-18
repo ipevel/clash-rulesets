@@ -236,6 +236,25 @@ def write_provider(fname, rules, header_note=""):
             f.write(f"  - {r}\n")
     return path, len(rules)
 
+# 中国云厂商/公司 IDC 网段（阿里云 / 腾讯云 / 华为云等）里，LOYO cncidr.txt 和
+# blackmatrix7 ChinaIPs 两个公共源都不含的 58 段。这些是国内大厂 IDC 自用段，
+# 没有公开的权威源，只能手工维护。2026-10-19 从历史 ChinaCompanyIp.yaml（208 段）
+# 用网段包含关系筛出这 58 段真正「增补价值」的部分，其余 150 段已由 ChinaIp 覆盖、删除。
+CHINA_COMPANY_EXTRA = [
+    "8.128.0.0/10", "8.209.32.0/22", "8.211.224.0/19", "8.212.0.0/14", "8.216.0.0/13",
+    "47.56.0.0/15", "47.89.64.0/24", "47.89.91.0/24", "47.246.5.0/24", "47.246.16.0/24",
+    "47.246.60.0/23", "47.246.65.0/24", "103.206.40.0/22", "163.181.32.0/22", "163.181.40.0/24",
+    "170.33.0.0/22", "103.7.28.0/22", "119.28.0.0/18", "119.28.64.0/19", "119.28.124.0/23",
+    "119.28.128.0/20", "119.28.164.0/22", "119.28.168.0/21", "119.28.176.0/20", "119.28.192.0/19",
+    "119.28.224.0/21", "150.109.32.0/19", "150.109.64.0/20", "150.109.96.0/19", "162.14.0.0/16",
+    "203.205.128.0/20", "203.205.144.0/21", "203.205.218.0/23", "203.205.220.0/22", "203.205.248.0/21",
+    "45.113.194.0/23", "63.243.252.0/24", "103.235.44.0/22", "114.28.224.0/20", "180.76.0.0/16",
+    "182.61.0.0/16", "185.10.105.0/24", "202.46.48.0/20", "203.90.238.0/24", "116.66.184.0/22",
+    "119.8.32.0/19", "159.138.0.0/18", "159.138.64.0/21", "159.138.79.0/24", "159.138.80.0/20",
+    "159.138.96.0/20", "159.138.112.0/21", "159.138.125.0/24", "159.138.128.0/19", "45.195.24.0/24",
+    "103.129.252.0/22", "103.131.252.0/22", "103.135.240.0/22",
+]
+
 # (源URL, 目标文件, 策略, 格式类型, 是否滤.cn)
 SOURCES = [
     # --- AI ---
@@ -260,6 +279,8 @@ SOURCES = [
     # --- 国内 ---
     (BM7.format(cat="China",        file="China_Domain.yaml"), "ChinaDomain.yaml",  "DIRECT", "auto", False),
     (LOYO.format(file="cncidr.txt"), "ChinaIp.yaml", "DIRECT", "cidr", False),
+    # 国内 IPv6：从 blackmatrix7 ChinaIPs_IP 全量清单只取 IPv6 段（fmt=ipcidr6），随日更刷新。
+    (BM7.format(cat="ChinaIPs", file="ChinaIPs_IP.yaml"), "ChinaIpV6.yaml", "DIRECT", "ipcidr6", False),
     # --- Telegram / GFW ---
     (BM7.format(cat="Telegram", file="Telegram.yaml"), "Telegram.yaml", "Proxy", "rule", True),
     (LOYO.format(file="gfw.txt"),           "ProxyGFWlist.yaml", "Proxy", "adguard", True),
@@ -310,12 +331,14 @@ def main():
                     r = to_rule(it, policy, "rule")
                 elif fmt == "adguard":
                     r = to_rule(it, policy, "adguard")
-                elif fmt == "cidr":
+                elif fmt in ("cidr", "ipcidr6"):
                     r = to_rule(it, policy, "cidr")
                 else:  # auto
                     r = to_rule(it, policy)
                 if r:
                     rules.append(r)
+            if fmt == "ipcidr6":
+                rules = [r for r in rules if ":" in r]
             if filter_cn:
                 rules = filter_cn_proxy(rules)
             if out == "ChinaDomain.yaml":
@@ -331,6 +354,14 @@ def main():
             total += n
         except Exception as e:
             results.append(f"FAIL {out:20s} {url}: {e}")
+
+    # --- ChinaCompanyIp：手工维护的云厂商 IDC 增补段（无公开源）---
+    try:
+        path, n = write_provider("ChinaCompanyIp.yaml", list(CHINA_COMPANY_EXTRA))
+        results.append(f"OK   {'ChinaCompanyIp.yaml':20s} {n:7d} rules  <- CHINA_COMPANY_EXTRA(手工维护)")
+        total += n
+    except Exception as e:
+        results.append(f"FAIL ChinaCompanyIp.yaml: {e}")
 
     # --- 合并源：多个上游分类合成一个 provider ---
     for out, cats in MERGED_SOURCES:
