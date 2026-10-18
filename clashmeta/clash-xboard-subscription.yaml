@@ -35,8 +35,8 @@ rule-providers:
     interval: 3600
 
   # 合并 AI 清单（Groq/Perplexity/Mistral/Meta AI/xAI/Cursor/JetBrains/Copilot 等）。
-  # 注意：这张清单里含 auth0/stripe/sentry/cloudflare-challenges 等第三方基础设施，
-  # 所以 RULE-SET,ai 刻意放在 rules 末尾（GFWlist 之后）才生效，避免劫持无关站点的流量。
+  # 生成阶段已剔除 auth0/stripe/sentry/intercom/cloudflare-challenges 等第三方基础设施域名
+  # （见 generate_providers.py 的 AI_INFRA_DROP），所以可以安全地放在靠前位置。
   ai:
     type: http
     behavior: classical
@@ -334,6 +334,7 @@ rules:
   - RULE-SET,openai,💬 Ai平台
   - RULE-SET,claude,💬 Ai平台
   - RULE-SET,googlegemini,💬 Ai平台
+  - RULE-SET,ai,💬 Ai平台
 
   # === 社交（Instagram / Twitter / Facebook / Whatsapp / Discord / Reddit）===
   - DOMAIN-KEYWORD,instagram,📱 社交
@@ -441,12 +442,6 @@ rules:
 
   # === GFWlist 兜底 ===
   - RULE-SET,gfwlist,🚀 节点选择
-
-  # === AI 合并清单兜底 ===
-  # 刻意放在 GFWlist 之后：这张清单含 auth0 / stripe / sentry / cloudflare-challenges
-  # 等第三方基础设施域名，放前面会劫持大量与 AI 无关的站点。
-  # 到这里还没被任何规则命中的 AI 域名（Perplexity / Mistral / Groq / xAI 等）才归 Ai平台。
-  - RULE-SET,ai,💬 Ai平台
 
   # === 最终兜底 ===
   - MATCH,🐟 漏网之鱼

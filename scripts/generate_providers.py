@@ -190,6 +190,41 @@ def dedup(rules):
             out.append(r)
     return out
 
+# AI 服务普遍依赖的第三方基础设施（登录/支付/人机验证/统计/客服/证书）。
+# 这些域名被 ACL4SSR 和 blackmatrix7 打进了 AI 清单，但它们服务的是**全网大量与 AI 无关的站点**
+# （Intercom 客服挂在无数网站上、Cloudflare Turnstile、Sentry、Stripe 支付……）。
+# 留在 AI 规则里会劫持非 AI 站点流量，且由于 AI 分组排在靠前位置，还会压过国内直连/GFW 兜底。
+# 2026-10-19 用户裁定：生成阶段统一剔除。
+AI_INFRA_DROP = {
+    "auth0.com",                     # 登录
+    "client-api.arkoselabs.com",     # Arkose 人机验证（多家站点共用）
+    "events.statsigapi.net",         # Statsig 埋点
+    "featuregates.org",              # 功能开关
+    "identrust.com",                 # 证书校验
+    "intercom.io",                   # 客服组件（挂在无数网站）
+    "intercomcdn.com",               # 客服组件 CDN
+    "challenges.cloudflare.com",     # Cloudflare Turnstile 人机验证
+    "sentry.io",                     # 错误上报
+    "stripe.com",                    # 支付
+}
+
+# 需要套用 AI_INFRA_DROP 的产出文件（4 条 AI 产线）
+AI_PROVIDERS = {"OpenAI.yaml", "Claude.yaml", "GoogleGemini.yaml", "AI.yaml"}
+
+def drop_ai_infra(rules):
+    """剔除 AI 清单里的第三方基础设施域名。
+
+    规则行形如 'DOMAIN-SUFFIX,auth0.com'，取第 2 段（域名）比对忽略大小写。
+    """
+    out = []
+    for r in rules:
+        parts = r.split(",")
+        val = parts[1].strip().lower() if len(parts) >= 2 else r.strip().lower()
+        if val in AI_INFRA_DROP:
+            continue
+        out.append(r)
+    return out
+
 def write_provider(fname, rules, header_note=""):
     os.makedirs(PROVIDER_DIR, exist_ok=True)
     path = os.path.join(PROVIDER_DIR, fname)
@@ -285,6 +320,8 @@ def main():
                 rules = filter_cn_proxy(rules)
             if out == "ChinaDomain.yaml":
                 rules = drop_microsoft_direct(rules)
+            if out in AI_PROVIDERS:
+                rules = drop_ai_infra(rules)
             rules = dedup(rules)
             if not rules:
                 raise RuntimeError("empty rules")
