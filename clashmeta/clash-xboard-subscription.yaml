@@ -34,6 +34,14 @@ rule-providers:
     path: ./ruleset/googlegemini-v2.yaml
     interval: 3600
 
+  # 合并 AI 清单（OpenAI/Claude/Gemini 之外再兜住 Groq/Perplexity/Mistral/Meta AI/xAI/Cursor/JetBrains/Copilot 等）
+  ai:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/AI.yaml"
+    path: ./ruleset/ai-v2.yaml
+    interval: 3600
+
   # === 流媒体 & 社交（YouTube归这里，Google归Google）===
   proxy-media:
     type: http
@@ -297,6 +305,7 @@ rules:
   - RULE-SET,openai,💬 Ai平台
   - RULE-SET,claude,💬 Ai平台
   - RULE-SET,googlegemini,💬 Ai平台
+  - RULE-SET,ai,💬 Ai平台
 
   # === 流媒体（内联关键词先匹配，RULE-SET兜底）===
   - DOMAIN-KEYWORD,youtube,📹 油管视频
