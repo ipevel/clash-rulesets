@@ -34,7 +34,9 @@ rule-providers:
     path: ./ruleset/googlegemini-v2.yaml
     interval: 3600
 
-  # 合并 AI 清单（OpenAI/Claude/Gemini 之外再兜住 Groq/Perplexity/Mistral/Meta AI/xAI/Cursor/JetBrains/Copilot 等）
+  # 合并 AI 清单（Groq/Perplexity/Mistral/Meta AI/xAI/Cursor/JetBrains/Copilot 等）。
+  # 注意：这张清单里含 auth0/stripe/sentry/cloudflare-challenges 等第三方基础设施，
+  # 所以 RULE-SET,ai 刻意放在 rules 末尾（GFWlist 之后）才生效，避免劫持无关站点的流量。
   ai:
     type: http
     behavior: classical
@@ -42,26 +44,28 @@ rule-providers:
     path: ./ruleset/ai-v2.yaml
     interval: 3600
 
-  # === 流媒体 & 社交（YouTube归这里，Google归Google）===
-  proxy-media:
-    type: http
-    behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyMedia.yaml"
-    path: ./ruleset/proxy-media-v2.yaml
-    interval: 3600
-
-  tiktok:
-    type: http
-    behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/TikTok.yaml"
-    path: ./ruleset/tiktok-v2.yaml
-    interval: 3600
-
+  # === 社交 ===
   instagram:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Instagram.yaml"
     path: ./ruleset/instagram-v2.yaml
+    interval: 3600
+
+  # 合并社交清单：Twitter / Facebook / Whatsapp / Discord / Reddit
+  social:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Social.yaml"
+    path: ./ruleset/social-v2.yaml
+    interval: 3600
+
+  # === 流媒体 ===
+  proxy-media:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ProxyMedia.yaml"
+    path: ./ruleset/proxy-media-v2.yaml
     interval: 3600
 
   netflix:
@@ -71,7 +75,22 @@ rule-providers:
     path: ./ruleset/netflix-v2.yaml
     interval: 3600
 
-  # === Google（已剥离YouTube/Play/FCM/Gemini，纯Google）===
+  # 合并流媒体清单：Disney+ / HBO Max / Prime Video / Twitch / Spotify
+  streaming:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Streaming.yaml"
+    path: ./ruleset/streaming-v2.yaml
+    interval: 3600
+
+  tiktok:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/TikTok.yaml"
+    path: ./ruleset/tiktok-v2.yaml
+    interval: 3600
+
+  # === Google（Google / Google Play / Google FCM 三合一）===
   google:
     type: http
     behavior: classical
@@ -101,12 +120,20 @@ rule-providers:
     path: ./ruleset/apple-v2.yaml
     interval: 3600
 
-  # === Dev ===
+  # === 开发者 ===
   github:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/GitHub.yaml"
     path: ./ruleset/github-v2.yaml
+    interval: 3600
+
+  # 合并开发者清单：GitLab / Docker Hub / npmjs / PyPI（Bitbucket 上游无此分类，走内联规则）
+  dev:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/Dev.yaml"
+    path: ./ruleset/dev-v2.yaml
     interval: 3600
 
   # === Microsoft ===
@@ -144,6 +171,22 @@ rule-providers:
     behavior: ipcidr
     url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIp.yaml"
     path: ./ruleset/chinaip-v2.yaml
+    interval: 3600
+
+  # 国内云厂商/公司自有 IDC 网段（阿里云、腾讯云等），GEOIP,CN 兜不住的部分
+  chinaccompanyip:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaCompanyIp.yaml"
+    path: ./ruleset/chinaccompanyip-v2.yaml
+    interval: 3600
+
+  # 国内 IPv6 网段（ChinaIp 只收 IPv4）
+  chinaipv6:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/ipevel/clash-rulesets@main/clashmeta/providers/ChinaIpV6.yaml"
+    path: ./ruleset/chinaipv6-v2.yaml
     interval: 3600
 
   # === Telegram ===
@@ -188,7 +231,15 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 📹 油管视频
+  # 社交：Instagram / Twitter / Facebook / Whatsapp / Discord / Reddit
+  - name: 📱 社交
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  # 流媒体：YouTube / Netflix / Disney+ / HBO Max / Prime Video / Twitch / Spotify
+  - name: 🎬 流媒体
     type: select
     proxies:
       - 🚀 节点选择
@@ -200,31 +251,8 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 📸 Instagram
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: 🎥 奈飞视频
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
+  # Google：Google / Google Play / Google FCM 三合一
   - name: 🔍 Google
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: ▶️ Google Play
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: 🔔 Google FCM
     type: select
     proxies:
       - 🚀 节点选择
@@ -236,7 +264,8 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 🧑‍💻 GitHub
+  # 开发者：GitHub / GitLab / Bitbucket / Docker Hub / npmjs / PyPI
+  - name: 💻 开发者
     type: select
     proxies:
       - 🚀 节点选择
@@ -291,7 +320,7 @@ rules:
   - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
   - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
 
-  # === AI平台（内联关键词先匹配，RULE-SET兜底）===
+  # === AI平台（精确 provider 放前面；合并清单 ai 见本文件末尾）===
   - DOMAIN-KEYWORD,openai,💬 Ai平台
   - DOMAIN-KEYWORD,chatgpt,💬 Ai平台
   - DOMAIN-KEYWORD,claude,💬 Ai平台
@@ -305,23 +334,40 @@ rules:
   - RULE-SET,openai,💬 Ai平台
   - RULE-SET,claude,💬 Ai平台
   - RULE-SET,googlegemini,💬 Ai平台
-  - RULE-SET,ai,💬 Ai平台
 
-  # === 流媒体（内联关键词先匹配，RULE-SET兜底）===
-  - DOMAIN-KEYWORD,youtube,📹 油管视频
-  - DOMAIN-KEYWORD,googlevideo,📹 油管视频
-  - DOMAIN-SUFFIX,youtube.com,📹 油管视频
-  - DOMAIN-SUFFIX,youtu.be,📹 油管视频
-  - DOMAIN-KEYWORD,netflix,🎥 奈飞视频
-  - DOMAIN-SUFFIX,nflxvideo.net,🎥 奈飞视频
+  # === 社交（Instagram / Twitter / Facebook / Whatsapp / Discord / Reddit）===
+  - DOMAIN-KEYWORD,instagram,📱 社交
+  - DOMAIN-KEYWORD,twitter,📱 社交
+  - DOMAIN-KEYWORD,facebook,📱 社交
+  - DOMAIN-KEYWORD,fbcdn,📱 社交
+  - DOMAIN-KEYWORD,whatsapp,📱 社交
+  - DOMAIN-KEYWORD,discord,📱 社交
+  - DOMAIN-KEYWORD,reddit,📱 社交
+  - DOMAIN-SUFFIX,t.co,📱 社交
+  - DOMAIN-SUFFIX,fb.com,📱 社交
+  - RULE-SET,instagram,📱 社交
+  - RULE-SET,social,📱 社交
+
+  # === 流媒体（YouTube / Netflix / Disney+ / HBO Max / Prime Video / Twitch / Spotify）===
+  - DOMAIN-KEYWORD,youtube,🎬 流媒体
+  - DOMAIN-KEYWORD,googlevideo,🎬 流媒体
+  - DOMAIN-SUFFIX,youtube.com,🎬 流媒体
+  - DOMAIN-SUFFIX,youtu.be,🎬 流媒体
+  - DOMAIN-KEYWORD,netflix,🎬 流媒体
+  - DOMAIN-SUFFIX,nflxvideo.net,🎬 流媒体
+  - DOMAIN-KEYWORD,disney,🎬 流媒体
+  - DOMAIN-KEYWORD,hbo,🎬 流媒体
+  - DOMAIN-KEYWORD,primevideo,🎬 流媒体
+  - DOMAIN-KEYWORD,twitch,🎬 流媒体
+  - DOMAIN-KEYWORD,spotify,🎬 流媒体
+  - RULE-SET,proxy-media,🎬 流媒体
+  - RULE-SET,netflix,🎬 流媒体
+  - RULE-SET,streaming,🎬 流媒体
+
+  # === TikTok ===
   - DOMAIN-KEYWORD,tiktok,🏷️ TikTok
   - DOMAIN-SUFFIX,tiktok.com,🏷️ TikTok
-  - DOMAIN-KEYWORD,instagram,📸 Instagram
-  - DOMAIN-SUFFIX,instagram.com,📸 Instagram
-  - RULE-SET,proxy-media,📹 油管视频
-  - RULE-SET,netflix,🎥 奈飞视频
   - RULE-SET,tiktok,🏷️ TikTok
-  - RULE-SET,instagram,📸 Instagram
 
   # === Telegram（内联关键词先匹配，RULE-SET兜底）===
   - DOMAIN-KEYWORD,telegram,📲 电报消息
@@ -330,18 +376,28 @@ rules:
   - RULE-SET,telegram,📲 电报消息
   - RULE-SET,telegramcidr,📲 电报消息,no-resolve
 
-  # === Google（已剥离YouTube/Play/FCM/Gemini，RULE-SET兜底）===
+  # === Google（已剥离YouTube/Play/FCM/Gemini，三套规则并入同一组）===
   - RULE-SET,google,🔍 Google
-  - RULE-SET,googleplay,▶️ Google Play
-  - RULE-SET,googlefcm,🔔 Google FCM
+  - RULE-SET,googleplay,🔍 Google
+  - RULE-SET,googlefcm,🔍 Google
 
   # === Apple ===
   - RULE-SET,apple,🍎 苹果服务
 
-  # === GitHub（内联关键词先匹配，RULE-SET兜底）===
-  - DOMAIN-KEYWORD,github,🧑‍💻 GitHub
-  - DOMAIN-SUFFIX,github.com,🧑‍💻 GitHub
-  - RULE-SET,github,🧑‍💻 GitHub
+  # === 开发者（GitHub / GitLab / Bitbucket / Docker Hub / npmjs / PyPI）===
+  - DOMAIN-KEYWORD,github,💻 开发者
+  - DOMAIN-SUFFIX,github.com,💻 开发者
+  - DOMAIN-KEYWORD,gitlab,💻 开发者
+  - DOMAIN-KEYWORD,bitbucket,💻 开发者
+  - DOMAIN-SUFFIX,docker.io,💻 开发者
+  - DOMAIN-SUFFIX,docker.com,💻 开发者
+  - DOMAIN-SUFFIX,registry.npmjs.org,💻 开发者
+  - DOMAIN-SUFFIX,npmjs.com,💻 开发者
+  - DOMAIN-SUFFIX,npmjs.org,💻 开发者
+  - DOMAIN-SUFFIX,pypi.org,💻 开发者
+  - DOMAIN-SUFFIX,pythonhosted.org,💻 开发者
+  - RULE-SET,github,💻 开发者
+  - RULE-SET,dev,💻 开发者
 
   # === Microsoft（内联规则优先，RULE-SET兜底）===
   - RULE-SET,bing,🔎 微软 Bing
@@ -378,11 +434,19 @@ rules:
   # === 中国直连 ===
   - RULE-SET,chinadomain,🎯 全球直连
   - RULE-SET,chinaip,🎯 全球直连,no-resolve
+  - RULE-SET,chinaccompanyip,🎯 全球直连,no-resolve
+  - RULE-SET,chinaipv6,🎯 全球直连,no-resolve
   - DOMAIN-SUFFIX,cn,🎯 全球直连
   - GEOIP,CN,🎯 全球直连
 
   # === GFWlist 兜底 ===
   - RULE-SET,gfwlist,🚀 节点选择
+
+  # === AI 合并清单兜底 ===
+  # 刻意放在 GFWlist 之后：这张清单含 auth0 / stripe / sentry / cloudflare-challenges
+  # 等第三方基础设施域名，放前面会劫持大量与 AI 无关的站点。
+  # 到这里还没被任何规则命中的 AI 域名（Perplexity / Mistral / Groq / xAI 等）才归 Ai平台。
+  - RULE-SET,ai,💬 Ai平台
 
   # === 最终兜底 ===
   - MATCH,🐟 漏网之鱼

@@ -231,6 +231,33 @@ SOURCES = [
     (LOYO.format(file="telegramcidr.txt"),  "TelegramCIDR.yaml", "Proxy", "cidr",    False),
 ]
 
+# 合并源：把多个上游分类合并成一个 provider（去重），对应订阅模板里的合并分组。
+# 2026-10-19 用户要求社交/流媒体/开发者各自并成一个分组；用合并 provider 可以避免
+# 模板里堆十几个 rule-provider 块，也少几次客户端 CDN 拉取。
+# 结构：(输出文件名, [(blackmatrix7 分类, 该分类文件名), ...])
+MERGED_SOURCES = [
+    ("Social.yaml", [
+        ("Twitter",  "Twitter.yaml"),
+        ("Facebook", "Facebook.yaml"),
+        ("Whatsapp", "Whatsapp.yaml"),
+        ("Discord",  "Discord.yaml"),
+        ("Reddit",   "Reddit.yaml"),
+    ]),
+    ("Streaming.yaml", [
+        ("Disney",     "Disney.yaml"),
+        ("HBO",        "HBO.yaml"),
+        ("PrimeVideo", "PrimeVideo.yaml"),
+        ("Twitch",     "Twitch.yaml"),
+        ("Spotify",    "Spotify.yaml"),
+    ]),
+    ("Dev.yaml", [
+        ("GitLab", "GitLab.yaml"),
+        ("Docker", "Docker.yaml"),
+        ("Npmjs",  "Npmjs.yaml"),
+        ("Python", "Python.yaml"),
+    ]),
+]
+
 def main():
     update_tpl = "--update-template" in sys.argv
     results = []
@@ -267,6 +294,31 @@ def main():
             total += n
         except Exception as e:
             results.append(f"FAIL {out:20s} {url}: {e}")
+
+    # --- 合并源：多个上游分类合成一个 provider ---
+    for out, cats in MERGED_SOURCES:
+        try:
+            rules = []
+            used = []
+            for cat, fname in cats:
+                url = BM7.format(cat=cat, file=fname)
+                items = parse_payload(fetch(url))
+                got = []
+                for it in items:
+                    r = to_rule(it, "Proxy", "rule")
+                    if r:
+                        got.append(r)
+                got = filter_cn_proxy(got)
+                rules.extend(got)
+                used.append(f"{cat}({len(got)})")
+            rules = dedup(rules)
+            if not rules:
+                raise RuntimeError("empty rules")
+            path, n = write_provider(out, rules)
+            results.append(f"OK   {out:20s} {n:7d} rules  <- merged {' + '.join(used)}")
+            total += n
+        except Exception as e:
+            results.append(f"FAIL {out:20s} {e}")
 
     # --- GooglePlay 从 Google.yaml 提取 ---
     try:
