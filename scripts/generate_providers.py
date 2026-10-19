@@ -206,21 +206,41 @@ AI_INFRA_DROP = {
     "challenges.cloudflare.com",     # Cloudflare Turnstile 人机验证
     "sentry.io",                     # 错误上报
     "stripe.com",                    # 支付
+    # --- 2026-10-19 全量复查新发现（同样是服务全网非 AI 站的第三方 SaaS）---
+    "algolia.net",                   # 站内搜索 SaaS
+    "api.statsig.com",               # Statsig 埋点（与 events.statsigapi.net 同源）
+    "browser-intake-datadoghq.com",  # Datadog 监控采集
+    "static.cloudflareinsights.com", # Cloudflare 访问统计
+    "usefathom.com",                 # 站点统计
+    "livekit.cloud",                 # WebRTC 实时通信平台
+    "launchdarkly.com",              # 功能开关（与 featuregates.org 同类）
+    "observeit.net",                 # 终端监控/审计
+    "segment.io",                    # 用户数据管道
 }
 
-# 需要套用 AI_INFRA_DROP 的产出文件（4 条 AI 产线）
+# 放错到 AI provider 的 Google 通用域名：不是 AI 服务，应由 🔍 Google 组接管
+# （模板 Google 段有对应内联规则 DOMAIN-SUFFIX,apis.google.com,🔍 Google）。
+# apis.google.com 是 Google 全系共用的 API JS 加载网关，搜索页等都会拉它，
+# 留在 AI 段会让谷歌搜索被提前判成 AI 流量。
+AI_MISPLACED_DROP = {
+    "apis.google.com",
+}
+
+# 需要套用上面两个剔除名单的产出文件（4 条 AI 产线）
 AI_PROVIDERS = {"OpenAI.yaml", "Claude.yaml", "GoogleGemini.yaml", "AI.yaml"}
 
 def drop_ai_infra(rules):
-    """剔除 AI 清单里的第三方基础设施域名。
+    """剔除 AI 清单里的第三方基础设施域名与放错的 Google 通用域名。
 
     规则行形如 'DOMAIN-SUFFIX,auth0.com'，取第 2 段（域名）比对忽略大小写。
+    支持父域匹配：名单里写 livekit.cloud 可同时命中 chatgpt.livekit.cloud 等子域。
     """
+    drop = AI_INFRA_DROP | AI_MISPLACED_DROP
     out = []
     for r in rules:
         parts = r.split(",")
         val = parts[1].strip().lower() if len(parts) >= 2 else r.strip().lower()
-        if val in AI_INFRA_DROP:
+        if any(val == d or val.endswith("." + d) for d in drop):
             continue
         out.append(r)
     return out

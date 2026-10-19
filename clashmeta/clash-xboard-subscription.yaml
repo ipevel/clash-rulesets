@@ -378,6 +378,9 @@ rules:
   - RULE-SET,telegramcidr,📲 电报消息,no-resolve
 
   # === Google（已剥离YouTube/Play/FCM/Gemini，三套规则并入同一组）===
+  # apis.google.com 是 Google 全系共用的 API JS 加载网关（搜索页也会拉），
+  # 曾被 blackmatrix7 误放进 Gemini 分类导致谷歌搜索被 AI 组截走，已剔除并在此显式接管。
+  - DOMAIN-SUFFIX,apis.google.com,🔍 Google
   - RULE-SET,google,🔍 Google
   - RULE-SET,googleplay,🔍 Google
   - RULE-SET,googlefcm,🔍 Google
